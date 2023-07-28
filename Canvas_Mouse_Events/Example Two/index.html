@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Canvas Practice</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <canvas
+      id="canvas-real"
+      class="canvas"
+      width="1280px"
+      height="720px"
+    ></canvas>
+    <canvas
+      id="canvas-draft"
+      class="canvas"
+      width="1280px"
+      height="720px"
+    ></canvas>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="text/javascript" src="./canvas-common.js"></script>
+    <script type="text/javascript" src="./drawing-line.js"></script>
+    <script type="text/javascript" src="./drawing-rectangle.js"></script>
+    <script>
+      currentFunction = new DrawingRectangle(contextReal, contextDraft);
+      // Open this in chrome using live server and open the console by right clicking and pressing inspect
+      // Try to draw some rectangles
+      // type in 'currentFunction = new DrawingLine(contextReal)'
+      // Now draw some lines.
+
+      // The current function variable is be assigned new class strategy patterns so that user mouse events cause differnt actions
+    </script>
+  </body>
+</html>
