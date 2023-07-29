@@ -1,6 +1,6 @@
 /**********************************************
  * Drawing Line Functionality
- * ==================================
+ * ================================== branch feat/implement-drawing-line
  * This class extends the PaintFunction class, which you can find in canvas-common
  * Remember, order matters
  ***********************************************/
