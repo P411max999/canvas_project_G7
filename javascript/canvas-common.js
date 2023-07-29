@@ -50,7 +50,12 @@ $("#canvas-draft").mouseenter(function (e) {
 /*  ====================== */
 class PaintFunction {
   constructor() {}
-  onMouseDown() {}
+  onMouseDown(coord, event) {
+    if (event.button === 2) {
+      this.context.strokeStyle = "#FFFFFF"; // right-click color
+      this.context.lineWidth = 10;
+    }
+  }
   onDragging() {}
   onMouseMove() {}
   onMouseUp() {}

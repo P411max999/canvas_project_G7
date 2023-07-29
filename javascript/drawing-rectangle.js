@@ -13,14 +13,14 @@ class DrawingRectangle extends PaintFunction {
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = "#f44";
+    this.contextReal.fillStyle = "green";
     this.origX = coord[0];
     this.origY = coord[1];
   }
 
   onDragging(coord, event) {
     // Manipulating the context draft
-    this.contextDraft.fillStyle = "#f44";
+    this.contextDraft.fillStyle = "green";
     // Allows you to actually draw out your squares
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     // Pass in the original x and y coordinates, followed by the new coordinates that we get for position x and y

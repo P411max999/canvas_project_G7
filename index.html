@@ -33,8 +33,10 @@
     <div class="buttons">
       <!-- The drawing rectangle button  -->
       <span class="btn btn-primary" id="drawing-rectangle">Draw Rectangle</span>
-      <!-- The drawing line button  -->
-      <span class="btn btn-primary" id="drawing-line">Draw Line</span>
+      <!-- The drawing line button  renamed as pencil-->
+      <span class="btn btn-primary" id="drawing-line">Pencil</span>
+      <!-- The eraser button  -->
+      <span class="btn btn-primary" id="eraser-line">Eraser</span>
 
       <!-- ==== FOR EACH NEW FUNCTION, COPY THIS UNDER BUTTON ==== -->
       <!-- X button  -->
@@ -51,6 +53,8 @@
     <script src="./javascript/canvas-common.js" type="text/javascript"></script>
     <!-- The drawing line functionality  -->
     <script src="./javascript/drawing-line.js" type="text/javascript"></script>
+    <!-- the eraser functionality -->
+    <script src="./javascript/eraser.js" type="text/javascript"></script>
     <!-- The drawing rectangle functionality  -->
     <script
       src="./javascript/drawing-rectangle.js"
@@ -64,6 +68,9 @@
         });
         $("#drawing-line").click(() => {
           currentFunction = new DrawingLine(contextReal);
+        });
+        $("#eraser-line").click(() => {
+          currentFunction = new Eraser(contextReal);
         });
       });
     </script>

@@ -1,10 +1,4 @@
-/**********************************************
- * Drawing Line Functionality
- * ================================== branch:feat-pencil-eraser
- * This class extends the PaintFunction class, which you can find in canvas-common
- * Remember, order matters
- ***********************************************/
-class DrawingLine extends PaintFunction {
+class Eraser extends PaintFunction {
   // This class extends the PaintFunction class
   // You are only passing one instance here
 
@@ -15,14 +9,9 @@ class DrawingLine extends PaintFunction {
 
   // On mouse down, ensure that the pen has these features
   onMouseDown(coord, event) {
-    // Fill in the color by left or right click
-    if (event.button === 0) {
-      this.context.strokeStyle = "green";
-      this.context.lineWidth = 2;
-    } else if (event.button === 2) {
-      this.context.strokeStyle = "#FFFFFF"; // right-click color
-      this.context.lineWidth = 10;
-    }
+    // Fill in the color
+    this.context.strokeStyle = "#FFFFFF";
+    this.context.lineWidth = 10;
     // Kind of line
     this.context.lineJoin = "round";
 
