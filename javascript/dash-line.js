@@ -25,6 +25,7 @@ class DashLine extends PaintFunction {
     this.contextDraft.lineTo(endPoint[0], endPoint[1]);
     // this.contextDraft.closePath();
     this.contextDraft.stroke();
+    this.contextDraft.setLineDash([]);
   }
   onMouseMove() {}
 
