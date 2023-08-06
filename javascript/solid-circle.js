@@ -22,7 +22,7 @@ class SolidCircle extends PaintFunction {
     // Circle drawing
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     // Manipulating the context draft
-    this.contextDraft.fillStyleStyle = "green";
+    this.contextDraft.fillStyle = "green";
     // Calculate the radius based on the distance between the original coordinates and the current coordinates
     const radius = Math.sqrt(
       (coord[0] - this.origX) ** 2 + (coord[1] - this.origY) ** 2
@@ -46,7 +46,7 @@ class SolidCircle extends PaintFunction {
     this.contextReal.beginPath();
     this.contextReal.arc(this.origX, this.origY, radius, 0, 2 * Math.PI);
 
-    // this.contextReal.closePath();
+    this.contextReal.closePath();
     this.contextReal.fill();
   }
 
