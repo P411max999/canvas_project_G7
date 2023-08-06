@@ -20,7 +20,7 @@ class DrawingLine extends PaintFunction {
       this.context.strokeStyle = "green";
       this.context.lineWidth = 2;
     } else if (event.button === 2) {
-      this.context.strokeStyle = "#FFFFFF"; // right-click color
+      this.context.strokeStyle = "#FFFFFF"; // right-click eraser color
       this.context.lineWidth = 10;
     }
     // Kind of line
