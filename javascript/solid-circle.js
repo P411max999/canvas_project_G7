@@ -10,10 +10,12 @@ class SolidCircle extends PaintFunction {
     super();
     this.contextReal = contextReal;
     this.contextDraft = contextDraft;
+    this.selectcolor = document.getElementById("myColor").value;
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = "green";
+    console.log(this.selectcolor);
+    this.contextReal.fillStyle = `${this.selectcolor}`;
     this.origX = coord[0];
     this.origY = coord[1];
   }
@@ -22,7 +24,7 @@ class SolidCircle extends PaintFunction {
     // Circle drawing
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     // Manipulating the context draft
-    this.contextDraft.fillStyle = "green";
+    this.contextDraft.fillStyle = `${this.selectcolor}`;
     // Calculate the radius based on the distance between the original coordinates and the current coordinates
     const radius = Math.sqrt(
       (coord[0] - this.origX) ** 2 + (coord[1] - this.origY) ** 2
@@ -39,7 +41,7 @@ class SolidCircle extends PaintFunction {
   // Committing the element to the canvas
   onMouseUp(coord) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextReal.fillStyle = "green";
+    this.contextReal.fillStyle = `${this.selectcolor}`;
     const radius = Math.sqrt(
       (coord[0] - this.origX) ** 2 + (coord[1] - this.origY) ** 2
     );

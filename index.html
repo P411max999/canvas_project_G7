@@ -52,6 +52,7 @@
       <!-- The triangle button  -->
       <span class="btn btn-primary" id="solid-triangle">Solid Triangle</span>
       <span class="btn btn-primary" id="hollow-triangle">Hollow Triangle</span>
+      <input type="color" id="myColor" />
 
       <!-- ==== FOR EACH NEW FUNCTION, COPY THIS UNDER BUTTON ==== -->
       <!-- X button  -->
@@ -127,6 +128,9 @@
         });
         $("#hollow-triangle").click(() => {
           currentFunction = new HollowTriangle(contextReal, contextDraft);
+        });
+        $("#myColor").mouseout(() => {
+          currentFunction = new DrawingLine(contextReal);
         });
       });
     </script>
