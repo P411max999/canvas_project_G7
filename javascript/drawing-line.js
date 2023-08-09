@@ -4,6 +4,7 @@
  * This class extends the PaintFunction class, which you can find in canvas-common
  * Remember, order matters
  ***********************************************/
+
 class DrawingLine extends PaintFunction {
   // This class extends the PaintFunction class
   // You are only passing one instance here
@@ -11,28 +12,49 @@ class DrawingLine extends PaintFunction {
   constructor(contextReal) {
     super();
     this.context = contextReal;
+    this.isEraser = false; // Flag to track if eraser mode is active
+    this.eraser = null; // Reference to the Eraser instance
   }
 
   // On mouse down, ensure that the pen has these features
   onMouseDown(coord, event) {
-    // Fill in the color by left or right click
     if (event.button === 0) {
-      this.context.strokeStyle = "green";
-      this.context.lineWidth = 2;
+      // Left-click
+      if (this.isEraser) {
+        // If eraser mode is active, switch back to pencil
+        this.isEraser = false;
+        this.context.strokeStyle = "green";
+        this.context.lineWidth = 2;
+      } else {
+        // If eraser mode is not active, set pencil options
+        this.context.strokeStyle = "green";
+        this.context.lineWidth = 2;
+      }
     } else if (event.button === 2) {
-      this.context.strokeStyle = "#FFFFFF"; // right-click eraser color
-      this.context.lineWidth = 10;
+      // Right-click
+      this.isEraser = true;
+      // Create an instance of the Eraser class if not already created
+      if (!this.eraser) {
+        this.eraser = new Eraser(this.context);
+      }
     }
-    // Kind of line
-    this.context.lineJoin = "round";
 
-    // Drawing the line here
-    this.context.beginPath();
-    this.context.moveTo(coord[0], coord[1]);
+    if (this.isEraser) {
+      this.eraser.onMouseDown(coord, event);
+    } else {
+      this.context.lineJoin = "round";
+      this.context.beginPath();
+      this.context.moveTo(coord[0], coord[1]);
+    }
   }
+
   // Clicking and removing your mouse
   onDragging(coord, event) {
-    this.draw(coord[0], coord[1]);
+    if (this.isEraser) {
+      this.eraser.onDragging(coord, event);
+    } else {
+      this.draw(coord[0], coord[1]);
+    }
   }
 
   onMouseMove() {}
