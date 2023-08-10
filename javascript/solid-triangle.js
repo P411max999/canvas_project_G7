@@ -4,17 +4,16 @@ class SolidTriangle extends PaintFunction {
     this.contextReal = contextReal;
     this.contextDraft = contextDraft;
     this.coordinates = []; // use array to store the coordinates
-    this.selectcolor = document.getElementById("myColor").value;
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = `${this.selectcolor}`;
+    this.contextReal.fillStyle = "green";
     this.coordinates.unshift(coord); // sotre the first coordinate，用push每次只能取最原始一個click坐標數，unshift可以更新下一個點擊坐標數
   }
 
   onDragging(coord, event) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextDraft.fillStyle = `${this.selectcolor}`;
+    this.contextDraft.fillStyle = "green";
     const startPoint = this.coordinates[0];
     const endPoint = coord;
     // //  計算中點的坐標[(x1+x2)/2,(y1+y2)/2]
@@ -35,7 +34,7 @@ class SolidTriangle extends PaintFunction {
 
   onMouseUp(coord) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextReal.fillStyle = `${this.selectcolor}`;
+    this.contextReal.fillStyle = "green";
     const startPoint = this.coordinates[0];
     const endPoint = coord;
     // const midPoint = [

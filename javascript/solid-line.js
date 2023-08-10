@@ -6,17 +6,16 @@ class SolidLine extends PaintFunction {
     this.contextReal = contextReal;
     this.contextDraft = contextDraft;
     this.coordinates = []; // use array to store the coordinates
-    this.selectcolor = document.getElementById("myColor").value;
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = `${this.selectcolor}`;
+    this.contextReal.fillStyle = "green";
     this.coordinates.unshift(coord); // sotre the first coordinate，用push每次只能取最原始一個click坐標數，unshift可以更新下一個點擊坐標數
   }
 
   onDragging(coord, event) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextDraft.strokeStyle = `${this.selectcolor}`;
+    this.contextDraft.strokeStyle = "green";
     const startPoint = this.coordinates[0];
     const endPoint = coord;
 
@@ -31,7 +30,7 @@ class SolidLine extends PaintFunction {
   onMouseUp(coord) {
     this.contextReal.lineWidth = 2;
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextReal.strokeStyle = `${this.selectcolor}`;
+    this.contextReal.strokeStyle = "green";
     const startPoint = this.coordinates[0];
     const endPoint = coord;
 

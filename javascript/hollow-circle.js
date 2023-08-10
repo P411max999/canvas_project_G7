@@ -10,11 +10,10 @@ class HollowCircle extends PaintFunction {
     super();
     this.contextReal = contextReal;
     this.contextDraft = contextDraft;
-    this.selectcolor = document.getElementById("myColor").value;
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = `${this.selectcolor}`;
+    this.contextReal.fillStyle = "green";
     this.origX = coord[0];
     this.origY = coord[1];
   }
@@ -30,7 +29,7 @@ class HollowCircle extends PaintFunction {
     );
     // Draw the circle from below
     this.contextDraft.arc(this.origX, this.origY, radius, 0, 2 * Math.PI);
-    this.contextDraft.strokeStyle = `${this.selectcolor}`;
+    this.contextDraft.strokeStyle = "green";
     this.contextDraft.stroke();
   }
 
@@ -45,7 +44,7 @@ class HollowCircle extends PaintFunction {
       Math.pow(coord[0] - this.origX, 2) + Math.pow(coord[1] - this.origY, 2)
     );
     this.contextReal.arc(this.origX, this.origY, radius, 0, 2 * Math.PI);
-    this.contextReal.strokeStyle = `${this.selectcolor}`;
+    this.contextReal.strokeStyle = "green";
     this.contextReal.stroke();
   }
 

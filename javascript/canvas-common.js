@@ -48,12 +48,6 @@ $("#canvas-draft").mouseenter(function (e) {
 
 /** # Class (all classes will have these methods) #
 /*  ====================== */
-
-// Prevent the context menu from appearing on right-click globally
-document.addEventListener("contextmenu", (event) => {
-  event.preventDefault();
-});
-
 class PaintFunction {
   constructor() {}
   onMouseDown() {}
@@ -63,3 +57,8 @@ class PaintFunction {
   onMouseLeave() {}
   onMouseEnter() {}
 }
+
+// Prevent the context menu from appearing on right-click globally
+document.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+});

@@ -9,13 +9,13 @@ class DashLine extends PaintFunction {
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = `${this.selectcolor}`;
+    this.contextReal.fillStyle = "green";
     this.coordinates.unshift(coord); // sotre the first coordinate，用push每次只能取最原始一個click坐標數，unshift可以更新下一個點擊坐標數
   }
 
   onDragging(coord, event) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextDraft.strokeStyle = `${this.selectcolor}`;
+    this.contextDraft.strokeStyle = "green";
     const startPoint = this.coordinates[0];
     const endPoint = coord;
 
@@ -32,7 +32,7 @@ class DashLine extends PaintFunction {
   onMouseUp(coord) {
     this.contextReal.lineWidth = 2;
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextReal.strokeStyle = `${this.selectcolor}`;
+    this.contextReal.strokeStyle = "green";
     const startPoint = this.coordinates[0];
     const endPoint = coord;
 
@@ -42,7 +42,6 @@ class DashLine extends PaintFunction {
     this.contextReal.lineTo(endPoint[0], endPoint[1]);
     // this.contextReal.closePath();
     this.contextReal.stroke();
-    this.contextReal.setLineDash([]); // change back to solid line
   }
 
   onMouseLeave() {}
