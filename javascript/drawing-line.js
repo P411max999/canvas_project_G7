@@ -11,16 +11,19 @@ class DrawingLine extends PaintFunction {
   constructor(contextReal) {
     super();
     this.context = contextReal;
+    this.selectcolor = document.getElementById("favcolorBorder").value;
+    console.log(this.selectcolor);
   }
 
   // On mouse down, ensure that the pen has these features
   onMouseDown(coord, event) {
     // Fill in the color by left or right click
     if (event.button === 0) {
-      this.context.strokeStyle = "green";
+      console.log(this.selectcolor);
+      this.context.strokeStyle = `${this.selectcolor}`;
       this.context.lineWidth = 2;
     } else if (event.button === 2) {
-      this.context.strokeStyle = "#FFFFFF"; // right-click eraser color
+      this.context.strokeStyle = "#FFFFFF"; // right-click color
       this.context.lineWidth = 10;
     }
     // Kind of line
