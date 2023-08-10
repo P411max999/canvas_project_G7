@@ -3,60 +3,266 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
+    <title>HubDoodle</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/button.css" />
+    <link rel="stylesheet" href="css/lightMode.css" />
+    <link rel="stylesheet" href="css/darkMode.css" />
+    <!-- cdn -->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
   </head>
-  <body class="container">
-    <h1>Canvas Application</h1>
-    <div id="canvas-container">
-      <canvas
-        id="canvas-real"
-        class="canvas"
-        width="1280px"
-        height="720px"
-      ></canvas>
-      <canvas
-        id="canvas-draft"
-        class="canvas"
-        width="1280px"
-        height="720px"
-      ></canvas>
-    </div>
-    <div class="buttons">
-      <!-- The drawing line button  renamed as pencil-->
-      <span class="btn btn-primary" id="drawing-line">Pencil</span>
-      <!-- The eraser button  -->
-      <span class="btn btn-primary" id="eraser-line">Eraser</span>
-      <!-- The straight line button  -->
-      <span class="btn btn-primary" id="solid-line">Solid Line</span>
-      <span class="btn btn-primary" id="dash-line">Dash Line</span>
-      <!-- The drawing rectangle button  -->
-      <span class="btn btn-primary" id="drawing-rectangle"
-        >Solid Rectangle</span
-      >
-      <!-- The hollow rectangle button  -->
-      <span class="btn btn-primary" id="hollow-rectangle"
-        >Hollow Rectangle</span
-      >
-      <!-- The circle button  -->
-      <span class="btn btn-primary" id="solid-circle">Solid Circle</span>
-      <span class="btn btn-primary" id="hollow-circle">Hollow Circle</span>
-      <!-- The triangle button  -->
-      <span class="btn btn-primary" id="solid-triangle">Solid Triangle</span>
-      <span class="btn btn-primary" id="hollow-triangle">Hollow Triangle</span>
-      <input type="color" id="myColor" />
 
-      <!-- ==== FOR EACH NEW FUNCTION, COPY THIS UNDER BUTTON ==== -->
-      <!-- X button  -->
-      <!-- <span class="btn btn-primary" id="X">X</span> -->
+  <body>
+    <div class="container-fluid m-0 p-0">
+      <div class="vh100">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand ps-4" href="#"
+              ><span class="logoText">HubDoodle</span></a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a href="#" class="removeAttr"
+                    ><div class="button bSize1 center" id="drawing-line">
+                      <i class="fa-solid fa-pen i1"></i></div
+                  ></a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="removeAttr"
+                    ><div class="button bSize1 center" id="eraser-line">
+                      <i class="fa-solid fa-eraser i1"></i></div
+                  ></a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="removeAttr"
+                    ><div class="button bSize1 center">
+                      <i class="fa-solid fa-lines-leaning i1"></i></div
+                  ></a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="removeAttr"
+                    ><div class="button bSize1 center">
+                      <i class="fa-solid fa-shapes i1"></i></div
+                  ></a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="removeAttr"
+                    ><div class="button bSize1 center" id="">
+                      <i class="fa-solid fa-font i1"></i></div
+                  ></a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="removeAttr"
+                    ><div class="button bSize1 center" id="">
+                      <i class="fa-solid fa-palette i1"></i></div
+                  ></a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="removeAttr"
+                    ><div class="button bSize1 center" id="">
+                      <i class="fa-solid fa-gear i1"></i></div
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="main">
+          <div class="canvasMain">
+            <div id="canvas-container">
+              <canvas
+                id="canvas-real"
+                class="canvas"
+                width="2400px"
+                height="2000px"
+              ></canvas>
+              <canvas
+                id="canvas-draft"
+                class="canvas"
+                width="2400px"
+                height="2000px"
+              ></canvas>
+            </div>
+          </div>
+          <div class="attr">
+            <div class="attrBox boxStyle">
+              <div class="close">X</div>
+              <div class="box">
+                <div class="row ps-3 pe-3">
+                  <div class="col-4 center">
+                    <a href="#" class="removeAttr"
+                      ><div class="button bSize2 center" id="solid-line">
+                        <i class="fa-solid fa-minus i2"></i></div
+                    ></a>
+                  </div>
+                  <div class="col-4 center">
+                    <a href="#" class="removeAttr"
+                      ><div class="button bSize2 center" id="dash-line">
+                        <i class="fa-solid fa-ellipsis i2"></i></div
+                    ></a>
+                  </div>
+                  <div class="col-4 center">
+                    <a href="#" class="removeAttr"
+                      ><div class="button bSize2 center" id="">
+                        <i class="fa-solid fa-bezier-curve i2"></i></div
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="attrBox boxStyle">
+              <div class="close">X</div>
+              <div class="box">
+                <div class="row ps-3 pe-3">
+                  <div class="col-4 center">
+                    <a href="#" class="removeAttr"
+                      ><div class="button bSize2 center" id="drawing-rectangle">
+                        <i class="bi bi-square-fill i2"></i></div
+                    ></a>
+                  </div>
+                  <div class="col-4 center">
+                    <a href="#" class="removeAttr"
+                      ><div class="button bSize2 center" id="solid-circle">
+                        <i class="bi bi-circle-fill i2"></i></div
+                    ></a>
+                  </div>
+                  <div class="col-4 center">
+                    <a href="#" class="removeAttr"
+                      ><div class="button bSize2 center" id="solid-triangle">
+                        <i class="bi bi-triangle-fill i2"></i></div
+                    ></a>
+                  </div>
+                  <div class="col-4 center">
+                    <a href="#" class="removeAttr"
+                      ><div class="button bSize2 center" id="hollow-rectangle">
+                        <i class="bi bi-square i2"></i></div
+                    ></a>
+                  </div>
+
+                  <div class="col-4 center">
+                    <a href="#" class="removeAttr"
+                      ><div class="button bSize2 center" id="hollow-circle">
+                        <i class="bi bi-circle i2"></i></div
+                    ></a>
+                  </div>
+
+                  <div class="col-4 center">
+                    <a href="#" class="removeAttr"
+                      ><div class="button bSize2 center" id="hollow-triangle">
+                        <i class="bi bi-triangle i2"></i></div
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="attrBox boxStyle">
+              <div class="close">X</div>
+              <div class="box">
+                <div class="part">
+                  <div class="center des">Color Wheel</div>
+                  <div class="overlay">
+                    <input
+                      type="color"
+                      id="favcolorBorder"
+                      name="favcolor"
+                      value="#000000"
+                    />
+                    <input
+                      type="color"
+                      id="favcolorFill"
+                      name="favcolor"
+                      value="#999999"
+                    />
+                  </div>
+                </div>
+                <div class="part">
+                  <div class="center des">Size</div>
+                  <div class="slider-container">
+                    <input
+                      type="range"
+                      id="sizeSlider"
+                      min="0"
+                      max="100"
+                      value="50"
+                      step="1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="attrBox boxStyle">
+              <div class="close">X</div>
+              <div class="box">
+                <div class="row ps-3 pe-3">
+                  <div class="col-3 center">
+                    <a href="#" class="removeAttr"
+                      ><div class="button bSize2 center">
+                        <i class="fa-solid fa-rotate-left i2"></i></div
+                    ></a>
+                  </div>
+
+                  <div class="col-3 center">
+                    <a href="#" class="removeAttr"
+                      ><div class="button bSize2 center">
+                        <i class="fa-solid fa-rotate-right i2"></i></div
+                    ></a>
+                  </div>
+
+                  <div class="col-3 center">
+                    <a href="#" class="removeAttr"
+                      ><div class="button bSize2 center">
+                        <i class="fa-regular fa-floppy-disk i2"></i></div
+                    ></a>
+                  </div>
+
+                  <div class="col-3 center">
+                    <a href="#" class="removeAttr"
+                      ><div class="button bSize2 center">
+                        <i class="fa-solid fa-trash i2"></i></div
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- jQuery -->
@@ -129,14 +335,33 @@
         $("#hollow-triangle").click(() => {
           currentFunction = new HollowTriangle(contextReal, contextDraft);
         });
-        $("#myColor").mouseout(() => {
-          currentFunction = new DrawingLine(contextReal);
-        });
       });
     </script>
 
     <!-- ==== FOR EACH NEW FUNCTION, COPY THIS UNDER jQuery ==== -->
     <!-- The X functionality  -->
     <!-- <script src="./javascript/X.js" type="text/javascript"></script> -->
+
+    <!-- scripts: bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- scripts: fontawesome - icon -->
+    <script
+      src="https://kit.fontawesome.com/b650d0e28e.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- scripts: jQuery Easing -->
+    <script src="./assets/js/jquery.easing.min.js"></script>
+    <!-- scripts: Custom scripts -->
+    <script src="./assets/js/scripts.js"></script>
   </body>
 </html>
