@@ -279,8 +279,3 @@ input[type="checkbox"]:checked + .slider:before {
   width: 16px; /* Increase the height to make it thicker */
   border-radius: 20px;
 }
-
-.footer{
-  height: 5rem;
-  width: auto;
-}
