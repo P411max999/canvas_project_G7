@@ -29,9 +29,14 @@ body {
   justify-content: space-between;
 }
 
+.overlap {
+  display: inline-flex;
+}
+
 .outline {
   border: 1px solid #000;
 }
+
 
 .center {
   display: flex;
@@ -45,55 +50,6 @@ body {
 
 .navbar {
   height: 6rem;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
-  border-radius: 0px 0px 15px 15px;
-}
-
-.nbToggler {
-  border: 0px solid black;
-}
-
-.headBar {
-  width: 100%;
-  height: 5rem;
-  display: inline-flex;
-  box-shadow: 0px 4px 4px rgba(45, 35, 66, 0.4);
-}
-
-.headBarL {
-  width: 100%;
-  margin-right: 2.5rem;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.headBarR {
-  width: 24rem;
-  display: block;
-}
-
-.logo {
-  width: 100%;
-  height: 0rem;
-  display: flex;
-  justify-content: center;
-  align-items: top;
-  font-size: x-large;
-  font-weight: bold;
-}
-
-.functionBar {
-  width: 100%;
-  height: 5rem;
-  display: inline-flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.fbRow {
-  display: block;
 }
 
 .i1 {
@@ -101,20 +57,12 @@ body {
 }
 
 .i2 {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
-.button4 {
-  width: 4.5vw;
-  height: 4.5vw;
-  min-width: 40px;
-  min-height: 40px;
-  margin: 5px 0px;
-}
-
-.button3 {
+.toggleBox {
   width: 4rem;
-  height: 2rem;
+  height: 2rem; 
   margin: 5px 0px;
 }
 
@@ -139,7 +87,7 @@ body {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: 0.4s;
+  transition: .4s;
   border-radius: 20px;
 }
 
@@ -147,11 +95,11 @@ body {
   position: absolute;
   content: "";
   width: 28.5px;
-  height: 28.5px;
+  height:  28.5px;
   left: 1px;
   bottom: 1px;
   background-color: white;
-  transition: 0.4s;
+  transition: .4s;
   border-radius: 50%;
 }
 
@@ -171,14 +119,12 @@ input[type="checkbox"]:checked + .slider:before {
 
 .canvasMain {
   width: 99vw;
-  height: 85vh;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
-  border-radius: 10px;
+  height: 82vh;
+  border-radius: 0px 0px 10px 0px;
 }
 
 .attr {
-  width: 20rem;
+  width: 14rem;
   height: 100%;
   display: block;
   justify-content: center;
@@ -189,26 +135,21 @@ input[type="checkbox"]:checked + .slider:before {
   width: 100%;
   height: auto;
   padding: auto;
-  margin: 2rem auto;
+  margin: 1.4rem auto;
   display: block;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
 }
 
-.boxStyle {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
-}
-
 .close {
   display: flex;
   justify-content: right;
+  font-size: xx-small;
   padding-right: 0.5rem;
   padding-top: 0.2rem;
   padding-bottom: 0.3rem;
-  box-shadow: rgba(45, 35, 66, 0.1) 0 2px 4px,
-    rgba(45, 35, 66, 0.05) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .col {
@@ -222,22 +163,25 @@ input[type="checkbox"]:checked + .slider:before {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
 }
 
 .part {
   display: block;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: 1rem;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
 }
 
 .des {
-  font-size: small;
-  padding-bottom: 0.5rem;
+  font-size: x-small;
+  padding-bottom: 0.2rem;
 }
 
 .overlay {
-  width: 80px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -245,25 +189,26 @@ input[type="checkbox"]:checked + .slider:before {
 
 #favcolorBorder {
   position: relative;
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   border: 0px solid;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0,0,0,0);
+  padding: 0.25rem;
 }
 
 #favcolorFill {
-  content: "";
+  content: '';
   position: absolute;
-  height: 55px;
-  width: 55px;
+  height: 35px;
+  width: 35px;
   border: 0px solid;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0,0,0,0);
 }
 
 .slider-container {
   position: relative;
-  width: 50px;
-  height: 80px;
+  width: 100%;
+  height: 60px;
 }
 
 #sizeSlider {
@@ -276,10 +221,7 @@ input[type="checkbox"]:checked + .slider:before {
 }
 
 #sizeSlider::-webkit-slider-runnable-track {
-  background-color: #ccc; /* Change the color of the track */
+  background-color: white; /* Change the color of the track */
   width: 16px; /* Increase the height to make it thicker */
   border-radius: 20px;
-}
-.hidden {
-  display: none;
 }

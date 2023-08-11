@@ -1,13 +1,68 @@
-class Clear extends PaintFunction {
-  constructor(canvasReal, canvasDraft, contextReal, contextDraft) {
-    super();
-    this.canvasReal = canvasReal;
-    this.canvasDraft = canvasDraft;
-    this.contextReal = contextReal;
-    this.contextDraft = contextDraft;
+/**********************************************
+ * The Canvas
+ * ================================== Nice to meet my groupmates!
+ ***********************************************/
+
+let canvasReal = document.getElementById("canvas-real");
+let contextReal = canvasReal.getContext("2d");
+let canvasDraft = document.getElementById("canvas-draft");
+let contextDraft = canvasDraft.getContext("2d");
+let currentFunction;
+let dragging = false;
+
+$("#canvas-draft").mousedown(function (e) {
+  let mouseX = e.offsetX;
+  let mouseY = e.offsetY;
+  currentFunction.onMouseDown([mouseX, mouseY], e);
+  dragging = true;
+});
+
+$("#canvas-draft").mousemove(function (e) {
+  let mouseX = e.offsetX;
+  let mouseY = e.offsetY;
+  if (dragging) {
+    currentFunction.onDragging([mouseX, mouseY], e);
   }
-  clear() {
-    console.log("click");
-    this.canvasReal.clearRect(0, 0, 10000, 10000);
-  }
+  currentFunction.onMouseMove([mouseX, mouseY], e);
+});
+
+$("#canvas-draft").mouseup(function (e) {
+  dragging = false;
+  let mouseX = e.offsetX;
+  let mouseY = e.offsetY;
+  currentFunction.onMouseUp([mouseX, mouseY], e);
+});
+
+$("#canvas-draft").mouseleave(function (e) {
+  dragging = false;
+  let mouseX = e.offsetX;
+  let mouseY = e.offsetY;
+  currentFunction.onMouseLeave([mouseX, mouseY], e);
+});
+
+$("#canvas-draft").mouseenter(function (e) {
+  let mouseX = e.offsetX;
+  let mouseY = e.offsetY;
+  currentFunction.onMouseEnter([mouseX, mouseY], e);
+});
+$("#clear").mousedown(function () {
+  currentFunction.clear();
+});
+
+/** # Class (all classes will have these methods) #
+/*  ====================== */
+class PaintFunction {
+  constructor() {}
+  onMouseDown() {}
+  onDragging() {}
+  onMouseMove() {}
+  onMouseUp() {}
+  onMouseLeave() {}
+  onMouseEnter() {}
+  clear() {}
 }
+
+// Prevent the context menu from appearing on right-click globally
+document.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+});
