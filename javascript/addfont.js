@@ -15,6 +15,7 @@ class AddFont extends PaintFunction {
       this.inputElement.style.top = coord[1] + "px";
       document.body.appendChild(this.inputElement);
       this.inputElement.focus();
+      console.log("run");
     } else {
       this.text = this.inputElement.value.trim();
       const inputLeft = parseInt(this.inputElement.style.left); //改左呢度

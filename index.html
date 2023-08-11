@@ -65,15 +65,18 @@
 
                 <li class="nav-item">
                   <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center">
-                      <i class="fa-solid fa-lines-leaning i1"></i></div
+                    ><div class="button bSize1 center" id="drawing-line">
+                      <i
+                        class="fa-solid fa-lines-leaning i1"
+                        id="add-drawing-line"
+                      ></i></div
                   ></a>
                 </li>
 
                 <li class="nav-item">
                   <a href="#" class="removeAttr"
                     ><div class="button bSize1 center">
-                      <i class="fa-solid fa-shapes i1"></i></div
+                      <i class="fa-solid fa-shapes i1" id="add-sharp"></i></div
                   ></a>
                 </li>
 
@@ -86,14 +89,14 @@
 
                 <li class="nav-item">
                   <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center" id="">
+                    ><div class="button bSize1 center" id="add-color">
                       <i class="fa-solid fa-palette i1"></i></div
                   ></a>
                 </li>
 
                 <li class="nav-item">
                   <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center" id="">
+                    ><div class="button bSize1 center" id="add-settings">
                       <i class="fa-solid fa-gear i1"></i></div
                   ></a>
                 </li>
@@ -119,8 +122,10 @@
             </div>
           </div>
           <div class="attr">
-            <div class="attrBox boxStyle draggable">
-              <div class="close">X</div>
+            <div class="attrBox boxStyle draggable" id="line-box">
+              <div class="close">
+                <i class="fa-solid fa-xmark" id="line"></i>
+              </div>
               <div class="box">
                 <div class="row ps-3 pe-3">
                   <div class="col-4 center">
@@ -145,8 +150,10 @@
               </div>
             </div>
 
-            <div class="attrBox boxStyle draggable">
-              <div class="close">X</div>
+            <div class="attrBox boxStyle draggable" id="shape-box">
+              <div class="close">
+                <i class="fa-solid fa-xmark" id="shape"></i>
+              </div>
               <div class="box">
                 <div class="row ps-3 pe-3">
                   <div class="col-4 center">
@@ -191,8 +198,10 @@
               </div>
             </div>
 
-            <div class="attrBox boxStyle draggable">
-              <div class="close">X</div>
+            <div class="attrBox boxStyle draggable" id="color-box">
+              <div class="close">
+                <i class="fa-solid fa-xmark" id="choosecolor"></i>
+              </div>
               <div class="box">
                 <div class="part">
                   <div class="center des">Color Wheel</div>
@@ -222,8 +231,10 @@
               </div>
             </div>
 
-            <div class="attrBox boxStyle draggable">
-              <div class="close">X</div>
+            <div class="attrBox boxStyle draggable" id="tools-box">
+              <div class="close">
+                <i class="fa-solid fa-xmark" id="tools"></i>
+              </div>
               <div class="box">
                 <div class="row ps-3 pe-3">
                   <div class="col-3 center">
@@ -301,12 +312,12 @@
       type="text/javascript"
     ></script>
     <script src="./javascript/clear.js"></script>
+    <script src="./javascript/addremove.js"></script>
     <script type="text/javascript">
       $(() => {
         currentFunction = new DrawingLine(contextReal);
         $("#add-font").click(() => {
           currentFunction = new AddFont(contextReal);
-          console.log("add");
         });
         $("#drawing-line").click(() => {
           currentFunction = new DrawingLine(contextReal);
@@ -341,9 +352,14 @@
         $("#favcolorBorder").mouseout(() => {
           currentFunction = new DrawingLine(contextReal);
         });
-        // $("#clear").click(() => {
-        //   currentFunction = new Clear(contextReal);
-        // });
+        $("#clear").click(() => {
+          currentFunction = new Clear(
+            contextReal,
+            contextDraft,
+            canvasDraft,
+            canvasReal
+          );
+        });
       });
     </script>
 
