@@ -3,13 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>HubDoodle</title>
+    <title>DO-DOODLE</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/button.css" />
-    <link rel="stylesheet" href="css/lightMode.css" />
-    <link rel="stylesheet" href="css/darkMode.css" />
+    <link rel="stylesheet" href="css/style-neu.css" />
     <!-- cdn -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -25,16 +24,40 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <div class="container-fluid m-0 p-0">
+    <div class="container-fluid m-0 p-0 overlap">
+      <div id="canvas-container">
+        <canvas
+          id="canvas-real"
+          class="canvas"
+          width="2000px"
+          height="1200px"
+        ></canvas>
+        <canvas
+          id="canvas-draft"
+          class="canvas"
+          width="2000px"
+          height="1200px"
+        ></canvas>
+      </div>
       <div class="vh100">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-md boxStyle">
           <div class="container-fluid">
             <button
-              class="navbar-toggler ms-3 mt-4 mb-4"
-              style="border: 0px solid #000"
+              class="navbar-toggler ms-3 mt-3 mb-4 boxStyle togglerSize"
+              style="border: 0px solid black"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarTogglerDemo03"
@@ -45,56 +68,110 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand ps-4" href="#"
-              ><span class="logoText">HubDoodle</span></a
+              ><span class="logoText">DO-DOODLE</span></a
             >
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul class="navbar-nav me-auto sm-2 sm-md-0">
                 <li class="nav-item">
-                  <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center" id="drawing-line">
-                      <i class="fa-solid fa-pen i1"></i></div
+                  <a
+                    href="#"
+                    class="removeAttr"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
+                    ><div
+                      class="button onClick bSize1 center"
+                      id="drawing-line"
+                    >
+                      <span class="gradient-text">
+                        <i class="fa-solid fa-pen i1"></i
+                      ></span></div
                   ></a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center" id="eraser-line">
-                      <i class="fa-solid fa-eraser i1"></i></div
+                  <a
+                    href="#"
+                    class="removeAttr"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
+                    ><div class="button onClick bSize1 center" id="eraser-line">
+                      <span class="gradient-text"
+                        ><i class="fa-solid fa-eraser i1"></i
+                      ></span></div
                   ></a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center">
-                      <i class="fa-solid fa-lines-leaning i1"></i></div
+                  <a
+                    href="#"
+                    class="removeAttr"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
+                    ><div
+                      class="button onClick bSize1 center"
+                      id="drawing-line"
+                    >
+                      <span class="gradient-text"
+                        ><i
+                          class="fa-solid fa-lines-leaning i1"
+                          id="add-drawing-line"
+                        ></i
+                      ></span></div
                   ></a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center">
-                      <i class="fa-solid fa-shapes i1"></i></div
+                  <a
+                    href="#"
+                    class="removeAttr"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
+                    ><div class="button onClick bSize1 center" id="add-sharp">
+                      <span class="gradient-text"
+                        ><i class="fa-solid fa-shapes i1"></i
+                      ></span></div
                   ></a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center" id="add-font">
-                      <i class="fa-solid fa-font i1"></i></div
+                  <a
+                    href="#"
+                    class="removeAttr"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
+                    ><div class="button onClick bSize1 center" id="add-font">
+                      <span class="gradient-text"
+                        ><i class="fa-solid fa-font i1"></i
+                      ></span></div
                   ></a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center" id="">
-                      <i class="fa-solid fa-palette i1"></i></div
+                  <a
+                    href="#"
+                    class="removeAttr"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
+                    ><div class="button onClick bSize1 center" id="add-color">
+                      <span class="gradient-text"
+                        ><i class="fa-solid fa-palette i1"></i
+                      ></span></div
                   ></a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center" id="">
-                      <i class="fa-solid fa-gear i1"></i></div
+                  <a
+                    href="#"
+                    class="removeAttr"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
+                    ><div
+                      class="button onClick bSize1 center"
+                      id="add-settings"
+                    >
+                      <span class="gradient-text"
+                        ><i class="fa-solid fa-gear i1"></i
+                      ></span></div
                   ></a>
                 </li>
               </ul>
@@ -102,100 +179,139 @@
           </div>
         </nav>
         <div class="main">
-          <div class="canvasMain">
-            <div id="canvas-container">
-              <canvas
-                id="canvas-real"
-                class="canvas"
-                width="2400px"
-                height="2000px"
-              ></canvas>
-              <canvas
-                id="canvas-draft"
-                class="canvas"
-                width="2400px"
-                height="2000px"
-              ></canvas>
-            </div>
-          </div>
+          <div class="canvasMain"></div>
           <div class="attr">
-            <div class="attrBox boxStyle draggable">
-              <div class="close">X</div>
+            <div class="attrBox boxStyle draggable" id="line-box">
+              <div class="close">
+                <span class="gradient-text"
+                  ><i class="fa-solid fa-xmark i2" id="line"></i
+                ></span>
+              </div>
               <div class="box">
                 <div class="row ps-3 pe-3">
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="solid-line">
-                        <i class="fa-solid fa-minus i2"></i></div
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="solid-line"
+                      >
+                        <span class="gradient-text"
+                          ><i class="fa-solid fa-minus i2"></i
+                        ></span></div
                     ></a>
                   </div>
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="dash-line">
-                        <i class="fa-solid fa-ellipsis i2"></i></div
+                      ><div class="button onClick bSize2 center" id="dash-line">
+                        <span class="gradient-text"
+                          ><i class="fa-solid fa-ellipsis i2"></i
+                        ></span></div
                     ></a>
                   </div>
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="">
-                        <i class="fa-solid fa-bezier-curve i2"></i></div
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="draw-curve"
+                      >
+                        <span class="gradient-text"
+                          ><i class="fa-solid fa-bezier-curve i2"></i
+                        ></span></div
                     ></a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="attrBox boxStyle draggable">
-              <div class="close">X</div>
+            <div class="attrBox boxStyle draggable" id="shape-box">
+              <div class="close">
+                <span class="gradient-text"
+                  ><i class="fa-solid fa-xmark i2" id="shape"></i
+                ></span>
+              </div>
               <div class="box">
                 <div class="row ps-3 pe-3">
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="drawing-rectangle">
-                        <i class="bi bi-square-fill i2"></i></div
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="drawing-rectangle"
+                      >
+                        <span class="gradient-text"
+                          ><i class="bi bi-square-fill i2"></i
+                        ></span></div
                     ></a>
                   </div>
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="solid-circle">
-                        <i class="bi bi-circle-fill i2"></i></div
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="solid-circle"
+                      >
+                        <span class="gradient-text"
+                          ><i class="bi bi-circle-fill i2"></i
+                        ></span></div
                     ></a>
                   </div>
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="solid-triangle">
-                        <i class="bi bi-triangle-fill i2"></i></div
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="solid-triangle"
+                      >
+                        <span class="gradient-text"
+                          ><i class="bi bi-triangle-fill i2"></i
+                        ></span></div
                     ></a>
                   </div>
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="hollow-rectangle">
-                        <i class="bi bi-square i2"></i></div
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="hollow-rectangle"
+                      >
+                        <span class="gradient-text"
+                          ><i class="bi bi-square i2"></i
+                        ></span></div
                     ></a>
                   </div>
 
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="hollow-circle">
-                        <i class="bi bi-circle i2"></i></div
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="hollow-circle"
+                      >
+                        <span class="gradient-text"
+                          ><i class="bi bi-circle i2"></i
+                        ></span></div
                     ></a>
                   </div>
 
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="hollow-triangle">
-                        <i class="bi bi-triangle i2"></i></div
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="hollow-triangle"
+                      >
+                        <span class="gradient-text">
+                          <i class="bi bi-triangle i2"></i
+                        ></span></div
                     ></a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="attrBox boxStyle draggable">
-              <div class="close">X</div>
+            <div class="attrBox boxStyle draggable" id="color-box">
+              <div class="close">
+                <span class="gradient-text"
+                  ><i class="fa-solid fa-xmark i2" id="choosecolor"></i
+                ></span>
+              </div>
               <div class="box">
                 <div class="part">
-                  <div class="center des">Color Wheel</div>
+                  <div class="center des">COLOR</div>
                   <div class="overlay">
                     <input type="color" id="favcolorBorder" name="favcolor" />
                     <!-- <input
@@ -207,7 +323,7 @@
                   </div>
                 </div>
                 <div class="part">
-                  <div class="center des">Size</div>
+                  <div class="center des">STROKE</div>
                   <div class="slider-container">
                     <input
                       type="range"
@@ -222,35 +338,47 @@
               </div>
             </div>
 
-            <div class="attrBox boxStyle draggable">
-              <div class="close">X</div>
+            <div class="attrBox boxStyle draggable" id="tools-box">
+              <div class="close">
+                <span class="gradient-text"
+                  ><i class="fa-solid fa-xmark i2" id="tools"></i
+                ></span>
+              </div>
               <div class="box">
                 <div class="row ps-3 pe-3">
                   <div class="col-3 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center">
-                        <i class="fa-solid fa-rotate-left i2"></i></div
+                      ><div class="button onClick bSize2 center">
+                        <span class="gradient-text">
+                          <i class="fa-solid fa-rotate-left i2"></i
+                        ></span></div
                     ></a>
                   </div>
 
                   <div class="col-3 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center">
-                        <i class="fa-solid fa-rotate-right i2"></i></div
+                      ><div class="button onClick bSize2 center">
+                        <span class="gradient-text">
+                          <i class="fa-solid fa-rotate-right i2"></i
+                        ></span></div
                     ></a>
                   </div>
 
                   <div class="col-3 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="download">
-                        <i class="fa-regular fa-floppy-disk i2"></i></div
+                      ><div class="button onClick bSize2 center" id="download">
+                        <span class="gradient-text">
+                          <i class="fa-regular fa-floppy-disk i2"></i
+                        ></span></div
                     ></a>
                   </div>
 
                   <div class="col-3 center" id="clear">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center">
-                        <i class="fa-solid fa-trash i2"></i></div
+                      ><div class="button onClick bSize2 center" id="clear">
+                        <span class="gradient-text">
+                          <i class="fa-solid fa-trash i2"></i
+                        ></span></div
                     ></a>
                   </div>
                 </div>
@@ -276,6 +404,7 @@
     <!-- The straight line functionality  -->
     <script src="./javascript/solid-line.js" type="text/javascript"></script>
     <script src="./javascript/dash-line.js" type="text/javascript"></script>
+    <script src="./javascript/curve.js" type="text/javascript"></script>
     <!-- The drawing rectangle functionality  -->
     <script
       src="./javascript/drawing-rectangle.js"
@@ -295,18 +424,22 @@
       src="./javascript/solid-triangle.js"
       type="text/javascript"
     ></script>
-    <script src="./javascript/addfont.js"></script>
     <script
       src="./javascript/hollow-triangle.js"
       type="text/javascript"
     ></script>
+    <!-- The Add Font functionality -->
+    <script src="./javascript/addfont.js"></script>
+    <!-- Setting -->
     <script src="./javascript/clear.js"></script>
+    <script src="./javascript/addremove.js"></script>
+    <!-- Basic -->
+    <script src="javascript/on-click.js"></script>
     <script type="text/javascript">
       $(() => {
         currentFunction = new DrawingLine(contextReal);
         $("#add-font").click(() => {
           currentFunction = new AddFont(contextReal);
-          console.log("add");
         });
         $("#drawing-line").click(() => {
           currentFunction = new DrawingLine(contextReal);
@@ -319,6 +452,9 @@
         });
         $("#dash-line").click(() => {
           currentFunction = new DashLine(contextReal, contextDraft);
+        });
+        $("#draw-curve").click(() => {
+          currentFunction = new DrawCurve(contextReal, contextDraft);
         });
         $("#drawing-rectangle").click(() => {
           currentFunction = new DrawingRectangle(contextReal, contextDraft);
@@ -341,15 +477,16 @@
         $("#favcolorBorder").mouseout(() => {
           currentFunction = new DrawingLine(contextReal);
         });
-        // $("#clear").click(() => {
-        //   currentFunction = new Clear(contextReal);
-        // });
+        $("#clear").click(() => {
+          currentFunction = new Clear(
+            contextReal,
+            contextDraft,
+            canvasDraft,
+            canvasReal
+          );
+        });
       });
     </script>
-
-    <!-- ==== FOR EACH NEW FUNCTION, COPY THIS UNDER jQuery ==== -->
-    <!-- The X functionality  -->
-    <!-- <script src="./javascript/X.js" type="text/javascript"></script> -->
 
     <!-- scripts: bootstrap -->
     <script
@@ -357,6 +494,17 @@
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+      crossorigin="anonymous"
+    ></script>
+    <!-- scripts: fontawesome - icon -->
+    <script
+      src="https://kit.fontawesome.com/b650d0e28e.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- scripts: jQuery -->
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
     <script>
@@ -365,18 +513,5 @@
         console.log("draggable");
       });
     </script>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-      integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- scripts: fontawesome - icon -->
-    <script
-      src="https://kit.fontawesome.com/b650d0e28e.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- scripts: jQuery Easing -->
   </body>
 </html>
