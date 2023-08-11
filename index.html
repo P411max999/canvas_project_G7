@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/button.css" />
+    <link rel="stylesheet" href="css/style-neu.css" />
     <link rel="stylesheet" href="css/lightMode.css" />
     <link rel="stylesheet" href="css/darkMode.css" />
     <!-- cdn -->
@@ -28,9 +28,23 @@
   </head>
 
   <body>
-    <div class="container-fluid m-0 p-0">
+    <div class="container-fluid m-0 p-0 overlap">
+      <div id="canvas-container">
+        <canvas
+          id="canvas-real"
+          class="canvas"
+          width="2400px"
+          height="2000px"
+        ></canvas>
+        <canvas
+          id="canvas-draft"
+          class="canvas"
+          width="2400px"
+          height="2000px"
+        ></canvas>
+      </div>
       <div class="vh100">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-md boxStyle">
           <div class="container-fluid">
             <button
               class="navbar-toggler ms-3 mt-4 mb-4"
@@ -50,50 +64,81 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center" id="drawing-line">
+                  <a
+                    href="#"
+                    class="removeAttr"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
+                    ><div
+                      class="button onClick bSize1 center"
+                      id="drawing-line"
+                    >
                       <i class="fa-solid fa-pen i1"></i></div
                   ></a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center" id="eraser-line">
+                  <a
+                    href="#"
+                    class="removeAttr"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
+                    ><div class="button onClick bSize1 center" id="eraser-line">
                       <i class="fa-solid fa-eraser i1"></i></div
                   ></a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center">
+                  <a
+                    href="#"
+                    class="removeAttr"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
+                    ><div class="button onClick bSize1 center">
                       <i class="fa-solid fa-lines-leaning i1"></i></div
                   ></a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center">
+                  <a
+                    href="#"
+                    class="removeAttr"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
+                    ><div class="button onClick bSize1 center">
                       <i class="fa-solid fa-shapes i1"></i></div
                   ></a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center" id="">
+                  <a
+                    href="#"
+                    class="removeAttr"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
+                    ><div class="button onClick bSize1 center" id="">
                       <i class="fa-solid fa-font i1"></i></div
                   ></a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center" id="">
+                  <a
+                    href="#"
+                    class="removeAttr"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
+                    ><div class="button onClick bSize1 center" id="">
                       <i class="fa-solid fa-palette i1"></i></div
                   ></a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="#" class="removeAttr"
-                    ><div class="button bSize1 center" id="">
+                  <a
+                    href="#"
+                    class="removeAttr"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".navbar-collapse.show"
+                    ><div class="button onClick bSize1 center" id="">
                       <i class="fa-solid fa-gear i1"></i></div
                   ></a>
                 </li>
@@ -102,42 +147,30 @@
           </div>
         </nav>
         <div class="main">
-          <div class="canvasMain">
-            <div id="canvas-container">
-              <canvas
-                id="canvas-real"
-                class="canvas"
-                width="2400px"
-                height="2000px"
-              ></canvas>
-              <canvas
-                id="canvas-draft"
-                class="canvas"
-                width="2400px"
-                height="2000px"
-              ></canvas>
-            </div>
-          </div>
+          <div class="canvasMain boxStyle"></div>
           <div class="attr">
             <div class="attrBox boxStyle">
-              <div class="close">X</div>
+              <div class="close boxStyle">X</div>
               <div class="box">
                 <div class="row ps-3 pe-3">
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="solid-line">
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="solid-line"
+                      >
                         <i class="fa-solid fa-minus i2"></i></div
                     ></a>
                   </div>
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="dash-line">
+                      ><div class="button onClick bSize2 center" id="dash-line">
                         <i class="fa-solid fa-ellipsis i2"></i></div
                     ></a>
                   </div>
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="">
+                      ><div class="button onClick bSize2 center" id="">
                         <i class="fa-solid fa-bezier-curve i2"></i></div
                     ></a>
                   </div>
@@ -146,44 +179,62 @@
             </div>
 
             <div class="attrBox boxStyle">
-              <div class="close">X</div>
+              <div class="close boxStyle">X</div>
               <div class="box">
                 <div class="row ps-3 pe-3">
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="drawing-rectangle">
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="drawing-rectangle"
+                      >
                         <i class="bi bi-square-fill i2"></i></div
                     ></a>
                   </div>
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="solid-circle">
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="solid-circle"
+                      >
                         <i class="bi bi-circle-fill i2"></i></div
                     ></a>
                   </div>
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="solid-triangle">
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="solid-triangle"
+                      >
                         <i class="bi bi-triangle-fill i2"></i></div
                     ></a>
                   </div>
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="hollow-rectangle">
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="hollow-rectangle"
+                      >
                         <i class="bi bi-square i2"></i></div
                     ></a>
                   </div>
 
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="hollow-circle">
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="hollow-circle"
+                      >
                         <i class="bi bi-circle i2"></i></div
                     ></a>
                   </div>
 
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center" id="hollow-triangle">
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="hollow-triangle"
+                      >
                         <i class="bi bi-triangle i2"></i></div
                     ></a>
                   </div>
@@ -192,7 +243,7 @@
             </div>
 
             <div class="attrBox boxStyle">
-              <div class="close">X</div>
+              <div class="close boxStyle">X</div>
               <div class="box">
                 <div class="part">
                   <div class="center des">Color Wheel</div>
@@ -228,33 +279,33 @@
             </div>
 
             <div class="attrBox boxStyle">
-              <div class="close">X</div>
+              <div class="close boxStyle">X</div>
               <div class="box">
                 <div class="row ps-3 pe-3">
                   <div class="col-3 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center">
+                      ><div class="button onClick bSize2 center">
                         <i class="fa-solid fa-rotate-left i2"></i></div
                     ></a>
                   </div>
 
                   <div class="col-3 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center">
+                      ><div class="button onClick bSize2 center">
                         <i class="fa-solid fa-rotate-right i2"></i></div
                     ></a>
                   </div>
 
                   <div class="col-3 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center">
+                      ><div class="button onClick bSize2 center">
                         <i class="fa-regular fa-floppy-disk i2"></i></div
                     ></a>
                   </div>
 
                   <div class="col-3 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button bSize2 center">
+                      ><div class="button onClick bSize2 center">
                         <i class="fa-solid fa-trash i2"></i></div
                     ></a>
                   </div>
@@ -265,7 +316,8 @@
         </div>
       </div>
     </div>
-
+    <!-- basic js -->
+    <script src="javascript/on-click.js"></script>
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
@@ -360,9 +412,5 @@
       src="https://kit.fontawesome.com/b650d0e28e.js"
       crossorigin="anonymous"
     ></script>
-    <!-- scripts: jQuery Easing -->
-    <script src="./assets/js/jquery.easing.min.js"></script>
-    <!-- scripts: Custom scripts -->
-    <script src="./assets/js/scripts.js"></script>
   </body>
 </html>

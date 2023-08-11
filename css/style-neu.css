@@ -1,3 +1,16 @@
+#root, a:hover {
+  color: #36395A; 
+}
+
+.boxStyle {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+}
+
+.navbar {
+  background-color: #FCFCFD;
+  border-radius: 0px 0px 20px 20px;
+}
+
 .bSize1 {
   width: 3.2rem;
   height: 3.2rem;
@@ -19,10 +32,6 @@
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
   box-sizing: border-box;
   color: #36395A;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: "JetBrains Mono",monospace;
-  justify-content: center;
   list-style: none;
   overflow: hidden;
   position: relative;
@@ -46,7 +55,12 @@
   transform: translateY(-2px);
 }
 
-.button:active {
+.onClick:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.button.active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
 }
