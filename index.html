@@ -28,8 +28,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -40,15 +42,16 @@
         <canvas
           id="canvas-real"
           class="canvas"
-          width="2400px"
-          height="2000px"
+          width="2000px"
+          height="1200px"
         ></canvas>
         <canvas
           id="canvas-draft"
           class="canvas"
-          width="2400px"
-          height="2000px"
+          width="2000px"
+          height="1200px"
         ></canvas>
+      </div>
       <div class="vh100">
         <nav class="navbar navbar-expand-md boxStyle">
           <div class="container-fluid">
@@ -207,7 +210,10 @@
                   </div>
                   <div class="col-4 center">
                     <a href="#" class="removeAttr"
-                      ><div class="button onClick bSize2 center" id="curve">
+                      ><div
+                        class="button onClick bSize2 center"
+                        id="draw-curve"
+                      >
                         <span class="gradient-text"
                           ><i class="fa-solid fa-bezier-curve i2"></i
                         ></span></div
@@ -305,7 +311,7 @@
               </div>
               <div class="box">
                 <div class="part">
-                  <div class="center des">Color Wheel</div>
+                  <div class="center des">COLOR</div>
                   <div class="overlay">
                     <input type="color" id="favcolorBorder" name="favcolor" />
                     <!-- <input
@@ -317,7 +323,7 @@
                   </div>
                 </div>
                 <div class="part">
-                  <div class="center des">Size</div>
+                  <div class="center des">STROKE</div>
                   <div class="slider-container">
                     <input
                       type="range"
@@ -369,7 +375,7 @@
 
                   <div class="col-3 center" id="clear">
                     <a href="#" class="removeAttr"
-                      ><div class="button onClick bSize2 center">
+                      ><div class="button onClick bSize2 center" id="clear">
                         <span class="gradient-text">
                           <i class="fa-solid fa-trash i2"></i
                         ></span></div
@@ -398,6 +404,7 @@
     <!-- The straight line functionality  -->
     <script src="./javascript/solid-line.js" type="text/javascript"></script>
     <script src="./javascript/dash-line.js" type="text/javascript"></script>
+    <script src="./javascript/curve.js" type="text/javascript"></script>
     <!-- The drawing rectangle functionality  -->
     <script
       src="./javascript/drawing-rectangle.js"
@@ -446,7 +453,9 @@
         $("#dash-line").click(() => {
           currentFunction = new DashLine(contextReal, contextDraft);
         });
-        $("#curve").click(() => {});
+        $("#draw-curve").click(() => {
+          currentFunction = new DrawCurve(contextReal, contextDraft);
+        });
         $("#drawing-rectangle").click(() => {
           currentFunction = new DrawingRectangle(contextReal, contextDraft);
         });
