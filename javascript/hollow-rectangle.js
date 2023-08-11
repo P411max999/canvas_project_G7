@@ -10,10 +10,11 @@ class HollowRectangle extends PaintFunction {
     super();
     this.contextReal = contextReal;
     this.contextDraft = contextDraft;
+    this.selectcolor = document.getElementById("favcolorBorder").value;
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = "green";
+    this.contextReal.fillStyle = `${this.selectcolor}`;
     this.origX = coord[0];
     this.origY = coord[1];
   }
@@ -22,7 +23,7 @@ class HollowRectangle extends PaintFunction {
     // Allows you to actually draw out your squares
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     // Manipulating the context draft
-    this.contextDraft.strokeStyle = "green";
+    this.contextDraft.strokeStyle = `${this.selectcolor}`;
     // Pass in the original x and y coordinates, followed by the new coordinates that we get for position x and y
     this.contextDraft.strokeRect(
       this.origX,
@@ -41,7 +42,7 @@ class HollowRectangle extends PaintFunction {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     // Commit that drawing to context real
     // Without this commit, it won't actually draw
-    this.contextReal.strokeStyle = "green";
+    this.contextReal.strokeStyle = `${this.selectcolor}`;
     this.contextReal.strokeRect(
       this.origX,
       this.origY,
