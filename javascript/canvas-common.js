@@ -45,6 +45,9 @@ $("#canvas-draft").mouseenter(function (e) {
   let mouseY = e.offsetY;
   currentFunction.onMouseEnter([mouseX, mouseY], e);
 });
+$("#clear").mousedown(function () {
+  currentFunction.clear();
+});
 
 /** # Class (all classes will have these methods) #
 /*  ====================== */
@@ -56,6 +59,7 @@ class PaintFunction {
   onMouseUp() {}
   onMouseLeave() {}
   onMouseEnter() {}
+  clear() {}
 }
 
 // Prevent the context menu from appearing on right-click globally
