@@ -1,5 +1,5 @@
 div, .logoText {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Jost', sans-serif;
   color: #3f2b96;
 }
 
@@ -20,7 +20,6 @@ div, .logoText {
   background: -webkit-linear-gradient(80deg, #ffffff, #ffffff, #ffffff, #D6D6E7);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(170deg, #ffffff, #ffffff, #ffffff, #D6D6E7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
 
 #favcolorBorder {
   border-radius: 5px;
@@ -95,4 +94,15 @@ div, .logoText {
   background: linear-gradient(to top, #3f2b96, #a8c0ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.canvasMain {
+  height:100%;
+  width:100%;  
+  background: #eee url('data:image/svg+xml,\
+   <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"         fill-opacity=".1" >\
+            <rect x="200" width="200" height="200" />\
+            <rect y="200" width="200" height="200" />\
+            </svg>');
+background-size: 24px 24px;
 }
