@@ -1,19 +1,39 @@
-.navbar {
-  background-color: #D6D6E7;
-  border-radius: 0px 0px 20px 20px;
+.attrBox {
+  border: 1px solid #000000;
+  border-radius: 0px;
+  transform: rotate(-2deg);
+}
+
+.canvasMain {
+  border: 1px solid #000000;
+}
+
+.box {
+  padding-bottom: 0.2rem;
+}
+
+.close {
+  border: 0px 0px 0px 0px;
+  border-bottom: 1px solid #000000;
+  transform: rotate(-1deg);  
+}
+
+.bSize1, .togglerSize {
+  width: 3rem;
+  height: 3rem;
 }
 
 .bSize1 {
-  width: 3.2rem;
-  height: 3.2rem;
   margin: 0.5rem 0.5rem 1rem 1rem;
 }
 
 .bSize2 {
-    width: 2rem;
-    height: 2rem;
-    margin-bottom: 0.5rem;
-  }
+  width: 1.6rem;
+  height: 1.6rem;
+  padding-left: 0.2rem;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
+}
 
 .button {
   background-color: #3DD1E7;
@@ -21,12 +41,6 @@
   box-sizing: border-box;
   color: #000000;
   display: flex;
-  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  font-size: 1rem;
-  font-weight: 700;
-  justify-content: center;
-  position: relative;
-  text-align: center;
   text-decoration: none #000000 solid;
   text-decoration-thickness: auto;
   position: relative;

@@ -50,7 +50,6 @@ body {
 
 .navbar {
   height: 6rem;
-  border-radius: 0px 0px 20px 20px;
 }
 
 .i1 {
@@ -58,7 +57,7 @@ body {
 }
 
 .i2 {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .toggleBox {
@@ -120,12 +119,12 @@ input[type="checkbox"]:checked + .slider:before {
 
 .canvasMain {
   width: 99vw;
-  height: 85vh;
-  border-radius: 10px;
+  height: 82vh;
+  border-radius: 0px 0px 10px 0px;
 }
 
 .attr {
-  width: 20rem;
+  width: 14rem;
   height: 100%;
   display: block;
   justify-content: center;
@@ -146,10 +145,11 @@ input[type="checkbox"]:checked + .slider:before {
 .close {
   display: flex;
   justify-content: right;
+  font-size: xx-small;
   padding-right: 0.5rem;
   padding-top: 0.2rem;
-  padding-bottom: 0.5rem;
-  border-radius: 0px;
+  padding-bottom: 0.3rem;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .col {
@@ -163,22 +163,25 @@ input[type="checkbox"]:checked + .slider:before {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
 }
 
 .part {
   display: block;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: 1rem;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
 }
 
 .des {
-  font-size: small;
-  padding-bottom: 0.5rem;
+  font-size: x-small;
+  padding-bottom: 0.2rem;
 }
 
 .overlay {
-  width: 80px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -190,20 +193,21 @@ input[type="checkbox"]:checked + .slider:before {
   width: 60px;
   border: 0px solid;
   background: rgba(0,0,0,0);
+  padding: 0.25rem;
 }
 
 #favcolorFill {
   content: '';
   position: absolute;
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
   border: 0px solid;
   background: rgba(0,0,0,0);
 }
 
 .slider-container {
   position: relative;
-  width: 50px;
+  width: 100%;
   height: 60px;
 }
 
@@ -217,7 +221,7 @@ input[type="checkbox"]:checked + .slider:before {
 }
 
 #sizeSlider::-webkit-slider-runnable-track {
-  background-color: #D6D6E7; /* Change the color of the track */
+  background-color: white; /* Change the color of the track */
   width: 16px; /* Increase the height to make it thicker */
   border-radius: 20px;
 }

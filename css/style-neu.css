@@ -1,27 +1,37 @@
-#root, a:hover {
-  color: #36395A; 
+div, .logoText {
+  color: #3f2b96;
 }
 
-.boxStyle {
+.boxStyle, #sizeSlider::-webkit-slider-runnable-track {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+}
+
+#favcolorBorder {
+  border-radius: 5px;
+  padding: 0.5rem;
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
 }
 
 .navbar {
   background-color: #FCFCFD;
-  border-radius: 0px 0px 20px 20px;
+  border-radius: 0px 0px 20px 0px;
+}
+
+.bSize1, .togglerSize {
+  width: 3rem;
+  height: 3rem;
 }
 
 .bSize1 {
-  width: 3.2rem;
-  height: 3.2rem;
   margin: 0.5rem 0.5rem 1rem 1rem;
 }
 
 .bSize2 {
-    width: 2rem;
-    height: 2rem;
-    margin-bottom: 0.5rem;
-  }
+  width: 1.6rem;
+  height: 1.6rem;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
+}
 
 .button {
   align-items: center;
@@ -31,7 +41,6 @@
   border-width: 0;
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
   box-sizing: border-box;
-  color: #36395A;
   list-style: none;
   overflow: hidden;
   position: relative;
@@ -43,7 +52,6 @@
   touch-action: manipulation;
   white-space: nowrap;
   will-change: box-shadow,transform;
-  font-size: 18px;
 }
 
 .button:focus {
@@ -63,4 +71,12 @@
 .button.active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+.gradient-text {
+  background: #a8c0ff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #3f2b96, #a8c0ff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #3f2b96, #a8c0ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
