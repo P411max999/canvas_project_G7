@@ -49,331 +49,344 @@
           width="2400px"
           height="2000px"
         ></canvas>
-      <div class="vh100">
-        <nav class="navbar navbar-expand-md boxStyle">
-          <div class="container-fluid">
-            <button
-              class="navbar-toggler ms-3 mt-3 mb-4 boxStyle togglerSize"
-              style="border: 0px solid black"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarTogglerDemo03"
-              aria-controls="navbarTogglerDemo03"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand ps-4" href="#"
-              ><span class="logoText">DO-DOODLE</span></a
-            >
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-              <ul class="navbar-nav me-auto sm-2 sm-md-0">
-                <li class="nav-item">
-                  <a
-                    href="#"
-                    class="removeAttr"
-                    data-bs-toggle="collapse"
-                    data-bs-target=".navbar-collapse.show"
-                    ><div
-                      class="button onClick bSize1 center"
-                      id="drawing-line"
-                    >
-                      <span class="gradient-text">
-                        <i class="fa-solid fa-pen i1"></i
-                      ></span></div
-                  ></a>
-                </li>
-
-                <li class="nav-item">
-                  <a
-                    href="#"
-                    class="removeAttr"
-                    data-bs-toggle="collapse"
-                    data-bs-target=".navbar-collapse.show"
-                    ><div class="button onClick bSize1 center" id="eraser-line">
-                      <span class="gradient-text"
-                        ><i class="fa-solid fa-eraser i1"></i
-                      ></span></div
-                  ></a>
-                </li>
-
-                <li class="nav-item">
-                  <a
-                    href="#"
-                    class="removeAttr"
-                    data-bs-toggle="collapse"
-                    data-bs-target=".navbar-collapse.show"
-                    ><div
-                      class="button onClick bSize1 center"
-                      id="drawing-line"
-                    >
-                      <span class="gradient-text"
-                        ><i
-                          class="fa-solid fa-lines-leaning i1"
-                          id="add-drawing-line"
-                        ></i
-                      ></span></div
-                  ></a>
-                </li>
-
-                <li class="nav-item">
-                  <a
-                    href="#"
-                    class="removeAttr"
-                    data-bs-toggle="collapse"
-                    data-bs-target=".navbar-collapse.show"
-                    ><div class="button onClick bSize1 center" id="add-sharp">
-                      <span class="gradient-text"
-                        ><i class="fa-solid fa-shapes i1"></i
-                      ></span></div
-                  ></a>
-                </li>
-
-                <li class="nav-item">
-                  <a
-                    href="#"
-                    class="removeAttr"
-                    data-bs-toggle="collapse"
-                    data-bs-target=".navbar-collapse.show"
-                    ><div class="button onClick bSize1 center" id="add-font">
-                      <span class="gradient-text"
-                        ><i class="fa-solid fa-font i1"></i
-                      ></span></div
-                  ></a>
-                </li>
-
-                <li class="nav-item">
-                  <a
-                    href="#"
-                    class="removeAttr"
-                    data-bs-toggle="collapse"
-                    data-bs-target=".navbar-collapse.show"
-                    ><div class="button onClick bSize1 center" id="add-color">
-                      <span class="gradient-text"
-                        ><i class="fa-solid fa-palette i1"></i
-                      ></span></div
-                  ></a>
-                </li>
-
-                <li class="nav-item">
-                  <a
-                    href="#"
-                    class="removeAttr"
-                    data-bs-toggle="collapse"
-                    data-bs-target=".navbar-collapse.show"
-                    ><div
-                      class="button onClick bSize1 center"
-                      id="add-settings"
-                    >
-                      <span class="gradient-text"
-                        ><i class="fa-solid fa-gear i1"></i
-                      ></span></div
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <div class="main">
-          <div class="canvasMain"></div>
-          <div class="attr">
-            <div class="attrBox boxStyle draggable" id="line-box">
-              <div class="close">
-                <span class="gradient-text"
-                  ><i class="fa-solid fa-xmark i2" id="line"></i
-                ></span>
-              </div>
-              <div class="box">
-                <div class="row ps-3 pe-3">
-                  <div class="col-4 center">
-                    <a href="#" class="removeAttr"
+        <div class="vh100">
+          <nav class="navbar navbar-expand-md boxStyle">
+            <div class="container-fluid">
+              <button
+                class="navbar-toggler ms-3 mt-3 mb-4 boxStyle togglerSize"
+                style="border: 0px solid black"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <a class="navbar-brand ps-4" href="#"
+                ><span class="logoText">DO-DOODLE</span></a
+              >
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto sm-2 sm-md-0">
+                  <li class="nav-item">
+                    <a
+                      href="#"
+                      class="removeAttr"
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
                       ><div
-                        class="button onClick bSize2 center"
-                        id="solid-line"
-                      >
-                        <span class="gradient-text"
-                          ><i class="fa-solid fa-minus i2"></i
-                        ></span></div
-                    ></a>
-                  </div>
-                  <div class="col-4 center">
-                    <a href="#" class="removeAttr"
-                      ><div class="button onClick bSize2 center" id="dash-line">
-                        <span class="gradient-text"
-                          ><i class="fa-solid fa-ellipsis i2"></i
-                        ></span></div
-                    ></a>
-                  </div>
-                  <div class="col-4 center">
-                    <a href="#" class="removeAttr"
-                      ><div class="button onClick bSize2 center" id="curve">
-                        <span class="gradient-text"
-                          ><i class="fa-solid fa-bezier-curve i2"></i
-                        ></span></div
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="attrBox boxStyle draggable" id="shape-box">
-              <div class="close">
-                <span class="gradient-text"
-                  ><i class="fa-solid fa-xmark i2" id="shape"></i
-                ></span>
-              </div>
-              <div class="box">
-                <div class="row ps-3 pe-3">
-                  <div class="col-4 center">
-                    <a href="#" class="removeAttr"
-                      ><div
-                        class="button onClick bSize2 center"
-                        id="drawing-rectangle"
-                      >
-                        <span class="gradient-text"
-                          ><i class="bi bi-square-fill i2"></i
-                        ></span></div
-                    ></a>
-                  </div>
-                  <div class="col-4 center">
-                    <a href="#" class="removeAttr"
-                      ><div
-                        class="button onClick bSize2 center"
-                        id="solid-circle"
-                      >
-                        <span class="gradient-text"
-                          ><i class="bi bi-circle-fill i2"></i
-                        ></span></div
-                    ></a>
-                  </div>
-                  <div class="col-4 center">
-                    <a href="#" class="removeAttr"
-                      ><div
-                        class="button onClick bSize2 center"
-                        id="solid-triangle"
-                      >
-                        <span class="gradient-text"
-                          ><i class="bi bi-triangle-fill i2"></i
-                        ></span></div
-                    ></a>
-                  </div>
-                  <div class="col-4 center">
-                    <a href="#" class="removeAttr"
-                      ><div
-                        class="button onClick bSize2 center"
-                        id="hollow-rectangle"
-                      >
-                        <span class="gradient-text"
-                          ><i class="bi bi-square i2"></i
-                        ></span></div
-                    ></a>
-                  </div>
-
-                  <div class="col-4 center">
-                    <a href="#" class="removeAttr"
-                      ><div
-                        class="button onClick bSize2 center"
-                        id="hollow-circle"
-                      >
-                        <span class="gradient-text"
-                          ><i class="bi bi-circle i2"></i
-                        ></span></div
-                    ></a>
-                  </div>
-
-                  <div class="col-4 center">
-                    <a href="#" class="removeAttr"
-                      ><div
-                        class="button onClick bSize2 center"
-                        id="hollow-triangle"
+                        class="button onClick bSize1 center"
+                        id="drawing-line"
                       >
                         <span class="gradient-text">
-                          <i class="bi bi-triangle i2"></i
+                          <i class="fa-solid fa-pen i1"></i
                         ></span></div
                     ></a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a
+                      href="#"
+                      class="removeAttr"
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
+                      ><div
+                        class="button onClick bSize1 center"
+                        id="eraser-line"
+                      >
+                        <span class="gradient-text"
+                          ><i class="fa-solid fa-eraser i1"></i
+                        ></span></div
+                    ></a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a
+                      href="#"
+                      class="removeAttr"
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
+                      ><div
+                        class="button onClick bSize1 center"
+                        id="drawing-line"
+                      >
+                        <span class="gradient-text"
+                          ><i
+                            class="fa-solid fa-lines-leaning i1"
+                            id="add-drawing-line"
+                          ></i
+                        ></span></div
+                    ></a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a
+                      href="#"
+                      class="removeAttr"
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
+                      ><div class="button onClick bSize1 center" id="add-sharp">
+                        <span class="gradient-text"
+                          ><i class="fa-solid fa-shapes i1"></i
+                        ></span></div
+                    ></a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a
+                      href="#"
+                      class="removeAttr"
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
+                      ><div class="button onClick bSize1 center" id="add-font">
+                        <span class="gradient-text"
+                          ><i class="fa-solid fa-font i1"></i
+                        ></span></div
+                    ></a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a
+                      href="#"
+                      class="removeAttr"
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
+                      ><div class="button onClick bSize1 center" id="add-color">
+                        <span class="gradient-text"
+                          ><i class="fa-solid fa-palette i1"></i
+                        ></span></div
+                    ></a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a
+                      href="#"
+                      class="removeAttr"
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
+                      ><div
+                        class="button onClick bSize1 center"
+                        id="add-settings"
+                      >
+                        <span class="gradient-text"
+                          ><i class="fa-solid fa-gear i1"></i
+                        ></span></div
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="main">
+            <div class="canvasMain"></div>
+            <div class="attr">
+              <div class="attrBox boxStyle draggable" id="line-box">
+                <div class="close">
+                  <span class="gradient-text"
+                    ><i class="fa-solid fa-xmark i2" id="line"></i
+                  ></span>
+                </div>
+                <div class="box">
+                  <div class="row ps-3 pe-3">
+                    <div class="col-4 center">
+                      <a href="#" class="removeAttr"
+                        ><div
+                          class="button onClick bSize2 center"
+                          id="solid-line"
+                        >
+                          <span class="gradient-text"
+                            ><i class="fa-solid fa-minus i2"></i
+                          ></span></div
+                      ></a>
+                    </div>
+                    <div class="col-4 center">
+                      <a href="#" class="removeAttr"
+                        ><div
+                          class="button onClick bSize2 center"
+                          id="dash-line"
+                        >
+                          <span class="gradient-text"
+                            ><i class="fa-solid fa-ellipsis i2"></i
+                          ></span></div
+                      ></a>
+                    </div>
+                    <div class="col-4 center">
+                      <a href="#" class="removeAttr"
+                        ><div
+                          class="button onClick bSize2 center"
+                          id="draw-curve"
+                        >
+                          <span class="gradient-text"
+                            ><i class="fa-solid fa-bezier-curve i2"></i
+                          ></span></div
+                      ></a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="attrBox boxStyle draggable" id="color-box">
-              <div class="close">
-                <span class="gradient-text"
-                  ><i class="fa-solid fa-xmark i2" id="choosecolor"></i
-                ></span>
+              <div class="attrBox boxStyle draggable" id="shape-box">
+                <div class="close">
+                  <span class="gradient-text"
+                    ><i class="fa-solid fa-xmark i2" id="shape"></i
+                  ></span>
+                </div>
+                <div class="box">
+                  <div class="row ps-3 pe-3">
+                    <div class="col-4 center">
+                      <a href="#" class="removeAttr"
+                        ><div
+                          class="button onClick bSize2 center"
+                          id="drawing-rectangle"
+                        >
+                          <span class="gradient-text"
+                            ><i class="bi bi-square-fill i2"></i
+                          ></span></div
+                      ></a>
+                    </div>
+                    <div class="col-4 center">
+                      <a href="#" class="removeAttr"
+                        ><div
+                          class="button onClick bSize2 center"
+                          id="solid-circle"
+                        >
+                          <span class="gradient-text"
+                            ><i class="bi bi-circle-fill i2"></i
+                          ></span></div
+                      ></a>
+                    </div>
+                    <div class="col-4 center">
+                      <a href="#" class="removeAttr"
+                        ><div
+                          class="button onClick bSize2 center"
+                          id="solid-triangle"
+                        >
+                          <span class="gradient-text"
+                            ><i class="bi bi-triangle-fill i2"></i
+                          ></span></div
+                      ></a>
+                    </div>
+                    <div class="col-4 center">
+                      <a href="#" class="removeAttr"
+                        ><div
+                          class="button onClick bSize2 center"
+                          id="hollow-rectangle"
+                        >
+                          <span class="gradient-text"
+                            ><i class="bi bi-square i2"></i
+                          ></span></div
+                      ></a>
+                    </div>
+
+                    <div class="col-4 center">
+                      <a href="#" class="removeAttr"
+                        ><div
+                          class="button onClick bSize2 center"
+                          id="hollow-circle"
+                        >
+                          <span class="gradient-text"
+                            ><i class="bi bi-circle i2"></i
+                          ></span></div
+                      ></a>
+                    </div>
+
+                    <div class="col-4 center">
+                      <a href="#" class="removeAttr"
+                        ><div
+                          class="button onClick bSize2 center"
+                          id="hollow-triangle"
+                        >
+                          <span class="gradient-text">
+                            <i class="bi bi-triangle i2"></i
+                          ></span></div
+                      ></a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="box">
-                <div class="part">
-                  <div class="center des">Color Wheel</div>
-                  <div class="overlay">
-                    <input type="color" id="favcolorBorder" name="favcolor" />
-                    <!-- <input
+
+              <div class="attrBox boxStyle draggable" id="color-box">
+                <div class="close">
+                  <span class="gradient-text"
+                    ><i class="fa-solid fa-xmark i2" id="choosecolor"></i
+                  ></span>
+                </div>
+                <div class="box">
+                  <div class="part">
+                    <div class="center des">Color Wheel</div>
+                    <div class="overlay">
+                      <input type="color" id="favcolorBorder" name="favcolor" />
+                      <!-- <input
                       type="color"
                       id="favcolorFill"
                       name="favcolor"
                       value="#999999"
                     /> -->
+                    </div>
                   </div>
-                </div>
-                <div class="part">
-                  <div class="center des">Size</div>
-                  <div class="slider-container">
-                    <input
-                      type="range"
-                      id="sizeSlider"
-                      min="0"
-                      max="100"
-                      value="50"
-                      step="1"
-                    />
+                  <div class="part">
+                    <div class="center des">Size</div>
+                    <div class="slider-container">
+                      <input
+                        type="range"
+                        id="sizeSlider"
+                        min="0"
+                        max="100"
+                        value="50"
+                        step="1"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="attrBox boxStyle draggable" id="tools-box">
-              <div class="close">
-                <span class="gradient-text"
-                  ><i class="fa-solid fa-xmark i2" id="tools"></i
-                ></span>
-              </div>
-              <div class="box">
-                <div class="row ps-3 pe-3">
-                  <div class="col-3 center">
-                    <a href="#" class="removeAttr"
-                      ><div class="button onClick bSize2 center">
-                        <span class="gradient-text">
-                          <i class="fa-solid fa-rotate-left i2"></i
-                        ></span></div
-                    ></a>
-                  </div>
+              <div class="attrBox boxStyle draggable" id="tools-box">
+                <div class="close">
+                  <span class="gradient-text"
+                    ><i class="fa-solid fa-xmark i2" id="tools"></i
+                  ></span>
+                </div>
+                <div class="box">
+                  <div class="row ps-3 pe-3">
+                    <div class="col-3 center">
+                      <a href="#" class="removeAttr"
+                        ><div class="button onClick bSize2 center">
+                          <span class="gradient-text">
+                            <i class="fa-solid fa-rotate-left i2"></i
+                          ></span></div
+                      ></a>
+                    </div>
 
-                  <div class="col-3 center">
-                    <a href="#" class="removeAttr"
-                      ><div class="button onClick bSize2 center">
-                        <span class="gradient-text">
-                          <i class="fa-solid fa-rotate-right i2"></i
-                        ></span></div
-                    ></a>
-                  </div>
+                    <div class="col-3 center">
+                      <a href="#" class="removeAttr"
+                        ><div class="button onClick bSize2 center">
+                          <span class="gradient-text">
+                            <i class="fa-solid fa-rotate-right i2"></i
+                          ></span></div
+                      ></a>
+                    </div>
 
-                  <div class="col-3 center">
-                    <a href="#" class="removeAttr"
-                      ><div class="button onClick bSize2 center" id="download">
-                        <span class="gradient-text">
-                          <i class="fa-regular fa-floppy-disk i2"></i
-                        ></span></div
-                    ></a>
-                  </div>
+                    <div class="col-3 center">
+                      <a href="#" class="removeAttr"
+                        ><div
+                          class="button onClick bSize2 center"
+                          id="download"
+                        >
+                          <span class="gradient-text">
+                            <i class="fa-regular fa-floppy-disk i2"></i
+                          ></span></div
+                      ></a>
+                    </div>
 
-                  <div class="col-3 center" id="clear">
-                    <a href="#" class="removeAttr"
-                      ><div class="button onClick bSize2 center">
-                        <span class="gradient-text">
-                          <i class="fa-solid fa-trash i2"></i
-                        ></span></div
-                    ></a>
+                    <div class="col-3 center" id="clear">
+                      <a href="#" class="removeAttr"
+                        ><div class="button onClick bSize2 center">
+                          <span class="gradient-text">
+                            <i class="fa-solid fa-trash i2"></i
+                          ></span></div
+                      ></a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -398,6 +411,7 @@
     <!-- The straight line functionality  -->
     <script src="./javascript/solid-line.js" type="text/javascript"></script>
     <script src="./javascript/dash-line.js" type="text/javascript"></script>
+    <script src="./javascript/curve.js" type="text/javascript"></script>
     <!-- The drawing rectangle functionality  -->
     <script
       src="./javascript/drawing-rectangle.js"
@@ -446,7 +460,9 @@
         $("#dash-line").click(() => {
           currentFunction = new DashLine(contextReal, contextDraft);
         });
-        $("#curve").click(() => {});
+        $("#draw-curve").click(() => {
+          currentFunction = new DrawCurve(contextReal, contextDraft);
+        });
         $("#drawing-rectangle").click(() => {
           currentFunction = new DrawingRectangle(contextReal, contextDraft);
         });
