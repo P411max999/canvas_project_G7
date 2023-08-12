@@ -495,9 +495,11 @@
         $("#hollow-triangle").click(() => {
           currentFunction = new HollowTriangle(contextReal, contextDraft);
         });
-        $("#favcolorBorder").mouseout(() => {
-          currentFunction = new DrawingLine(contextReal);
-        });
+        // $("#favcolorBorder").mouseout(() => {
+        //   currentFunction = new DrawingLine(contextReal);
+        // });
+        //若出示，pick color後變pencil（保持上一個顏色）；
+        // 若hide,不會變pencil,但保持上一個圖形&上一個顏色，除非pick color後再重新pick圖形
         $("#clear").click(() => {
           currentFunction = new Clear(
             contextReal,
