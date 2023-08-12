@@ -6,9 +6,9 @@
     <title>DO-DOODLE</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/button.css" />
-    <link id="style" rel="stylesheet" href="css/style-neu.css" />
+    <link rel="stylesheet" href="./css/closeWindow.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link id="style" rel="stylesheet" href="./css/style-neu.css" />
     <!-- cdn -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -49,7 +49,11 @@
         ></canvas>
       </div>
       <div class="vh100">
-        <nav class="navbar navbar-expand-md boxStyle" data-bs-theme="dark">
+        <nav
+          id="style-nav"
+          class="navbar navbar-expand-md boxStyle bg-body-tertiary"
+          data-bs-theme="grey"
+        >
           <div class="container-fluid">
             <button
               class="navbar-toggler ms-3 mt-3 mb-4 boxStyle togglerSize"
@@ -63,13 +67,13 @@
             >
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="logo">
+            <div class="logo ms-4 me-3">
               <div>
-                <a class="navbar-brand ps-4" href="index.html"
-                  ><span class="logoText">DO-DOODLE</span></a
+                <a class="navbar-brand" style="margin: 0px" href="index.html"
+                  ><span class="logoText">DO-D</span></a
                 >
               </div>
-              <div center>
+              <div class="center ps-1 pe-1">
                 <label class="toggle">
                   <input
                     type="checkbox"
@@ -78,6 +82,11 @@
                   />
                   <span class="slider"></span>
                 </label>
+              </div>
+              <div>
+                <a class="navbar-brand" href="index.html"
+                  ><span class="logoText">DLE</span></a
+                >
               </div>
             </div>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -119,13 +128,10 @@
                     data-bs-target=".navbar-collapse.show"
                     ><div
                       class="button onClick bSize1 center"
-                      id="drawing-line"
+                      id="add-drawing-line"
                     >
                       <span class="gradient-text"
-                        ><i
-                          class="fa-solid fa-lines-leaning i1"
-                          id="add-drawing-line"
-                        ></i
+                        ><i class="fa-solid fa-lines-leaning i1"></i
                       ></span></div
                   ></a>
                 </li>
@@ -191,7 +197,7 @@
         <div class="main">
           <div class="canvasMain"></div>
           <div class="attr">
-            <div class="attrBox boxStyle draggable" id="line-box">
+            <div class="attrBox boxStyle draggable hidden" id="line-box">
               <div class="close">
                 <span class="gradient-text"
                   ><i class="fa-solid fa-xmark i2" id="line"></i
@@ -233,7 +239,7 @@
               </div>
             </div>
 
-            <div class="attrBox boxStyle draggable" id="shape-box">
+            <div class="attrBox boxStyle draggable hidden" id="shape-box">
               <div class="close">
                 <span class="gradient-text"
                   ><i class="fa-solid fa-xmark i2" id="shape"></i
@@ -313,7 +319,7 @@
               </div>
             </div>
 
-            <div class="attrBox boxStyle draggable" id="color-box">
+            <div class="attrBox boxStyle draggable hidden" id="color-box">
               <div class="close">
                 <span class="gradient-text"
                   ><i class="fa-solid fa-xmark i2" id="choosecolor"></i
@@ -341,7 +347,7 @@
               </div>
             </div>
 
-            <div class="attrBox boxStyle draggable" id="tools-box">
+            <div class="attrBox boxStyle draggable hidden" id="tools-box">
               <div class="close">
                 <span class="gradient-text"
                   ><i class="fa-solid fa-xmark i2" id="tools"></i
@@ -453,43 +459,56 @@
       $(() => {
         currentFunction = new DrawingLine(contextReal);
         $("#add-font").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new AddFont(contextReal);
         });
         $("#drawing-line").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new DrawingLine(contextReal);
         });
         $("#eraser-line").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new Eraser(contextReal);
         });
         $("#solid-line").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new SolidLine(contextReal, contextDraft);
         });
         $("#dash-line").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new DashLine(contextReal, contextDraft);
         });
         $("#draw-curve").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new DrawCurve(contextReal, contextDraft);
         });
         $("#drawing-rectangle").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new DrawingRectangle(contextReal, contextDraft);
         });
         $("#hollow-rectangle").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new HollowRectangle(contextReal, contextDraft);
         });
         $("#solid-circle").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new SolidCircle(contextReal, contextDraft);
         });
         $("#hollow-circle").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new HollowCircle(contextReal, contextDraft);
         });
         $("#solid-triangle").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new SolidTriangle(contextReal, contextDraft);
         });
         $("#hollow-triangle").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new HollowTriangle(contextReal, contextDraft);
         });
+        // TBC
         $("#favcolorBorder").mouseout(() => {
-          currentFunction = new DrawingLine(contextReal);
+          currentFunction = new previousFunction();
         });
         $("#clear").click(() => {
           currentFunction = new Clear(
