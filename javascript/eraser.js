@@ -11,7 +11,7 @@ class Eraser extends PaintFunction {
   onMouseDown(coord, event) {
     // Fill in the color
     this.context.strokeStyle = "#FFFFFF";
-    this.context.lineWidth = 10;
+    this.context.lineWidth = lineWidth.value;
     // Kind of line
     this.context.lineJoin = "round";
 

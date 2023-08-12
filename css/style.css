@@ -37,7 +37,6 @@ body {
   border: 1px solid #000;
 }
 
-
 .center {
   display: flex;
   justify-content: center;
@@ -68,7 +67,7 @@ body {
 
 .toggleBox {
   width: 4rem;
-  height: 2rem; 
+  height: 2rem;
   margin: 5px 0px;
 }
 
@@ -93,7 +92,7 @@ body {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 20px;
 }
 
@@ -101,11 +100,11 @@ body {
   position: absolute;
   content: "";
   width: 28.5px;
-  height:  28.5px;
+  height: 28.5px;
   left: 1px;
   bottom: 1px;
   background-color: white;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 50%;
 }
 
@@ -183,7 +182,7 @@ input[type="checkbox"]:checked + .slider:before {
   display: block;
   justify-content: space-between;
   align-items: center;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
 }
 
@@ -204,17 +203,17 @@ input[type="checkbox"]:checked + .slider:before {
   height: 60px;
   width: 60px;
   border: 0px solid;
-  background: rgba(0,0,0,0);
+  background: rgba(0, 0, 0, 0);
   padding: 0.25rem;
 }
 
 #favcolorFill {
-  content: '';
+  content: "";
   position: absolute;
   height: 35px;
   width: 35px;
   border: 0px solid;
-  background: rgba(0,0,0,0);
+  background: rgba(0, 0, 0, 0);
 }
 
 .slider-container {
@@ -236,4 +235,7 @@ input[type="checkbox"]:checked + .slider:before {
   background-color: white; /* Change the color of the track */
   width: 16px; /* Increase the height to make it thicker */
   border-radius: 20px;
+}
+.hidden {
+  display: none;
 }

@@ -17,7 +17,7 @@ class SolidLine extends PaintFunction {
 
   onDragging(coord, event) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextDraft.strokeStyle = `${this.selectcolor}`;
+    this.contextDraft.strokeStyle = `${selectcolor.value}`;
     const startPoint = this.coordinates[0];
     const endPoint = coord;
 
@@ -30,9 +30,9 @@ class SolidLine extends PaintFunction {
   onMouseMove() {}
 
   onMouseUp(coord) {
-    this.contextReal.lineWidth = 2;
+    this.contextReal.lineWidth = lineWidth.value;
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextReal.strokeStyle = `${this.selectcolor}`;
+    this.contextReal.strokeStyle = `${selectcolor.value}`;
     const startPoint = this.coordinates[0];
     const endPoint = coord;
 
