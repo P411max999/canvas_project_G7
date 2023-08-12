@@ -29,6 +29,10 @@ body {
   justify-content: space-between;
 }
 
+.overlap {
+  display: inline-flex;
+}
+
 .outline {
   border: 1px solid #000;
 }
@@ -72,12 +76,6 @@ body {
 .headBarR {
   width: 24rem;
   display: block;
-}
-
-.logo {
-  width: 100%;
-  height: 0rem;
-  display: flex;
   justify-content: center;
   align-items: top;
   font-size: x-large;
@@ -92,8 +90,8 @@ body {
   align-items: center;
 }
 
-.fbRow {
-  display: block;
+.navbar {
+  height: 6rem;
 }
 
 .i1 {
@@ -101,7 +99,7 @@ body {
 }
 
 .i2 {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .button4 {
@@ -163,10 +161,15 @@ input[type="checkbox"]:checked + .slider:before {
   transform: translateX(30px);
 }
 
-.main {
+/* .main {
   display: inline-flex;
   width: 100%;
   height: 80vh;
+} */
+
+.main {
+  width: 100vw;
+  height: 85vh;
 }
 
 .canvasMain {
@@ -178,8 +181,11 @@ input[type="checkbox"]:checked + .slider:before {
 }
 
 .attr {
-  width: 20rem;
-  height: 100%;
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  width: 14rem;
+  height: 0;
   display: block;
   justify-content: center;
   padding: 0px 1rem 0px 1rem;
@@ -189,7 +195,7 @@ input[type="checkbox"]:checked + .slider:before {
   width: 100%;
   height: auto;
   padding: auto;
-  margin: 2rem auto;
+  margin: 1.4rem auto;
   display: block;
   justify-content: center;
   align-items: center;
@@ -204,6 +210,7 @@ input[type="checkbox"]:checked + .slider:before {
 .close {
   display: flex;
   justify-content: right;
+  font-size: xx-small;
   padding-right: 0.5rem;
   padding-top: 0.2rem;
   padding-bottom: 0.3rem;
@@ -222,22 +229,25 @@ input[type="checkbox"]:checked + .slider:before {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
 }
 
 .part {
   display: block;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .des {
   font-size: small;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.2rem;
 }
 
 .overlay {
-  width: 80px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -245,25 +255,25 @@ input[type="checkbox"]:checked + .slider:before {
 
 #favcolorBorder {
   position: relative;
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   border: 0px solid;
-  background: rgba(38, 121, 216, 0);
+  background: rgba(0, 0, 0, 0);
 }
 
 #favcolorFill {
   content: "";
   position: absolute;
-  height: 55px;
-  width: 55px;
+  height: 35px;
+  width: 35px;
   border: 0px solid;
   background: rgba(0, 0, 0, 0);
 }
 
 .slider-container {
   position: relative;
-  width: 50px;
-  height: 80px;
+  width: 100%;
+  height: 60px;
 }
 
 #sizeSlider {
@@ -276,7 +286,7 @@ input[type="checkbox"]:checked + .slider:before {
 }
 
 #sizeSlider::-webkit-slider-runnable-track {
-  background-color: #ccc; /* Change the color of the track */
+  background-color: white; /* Change the color of the track */
   width: 16px; /* Increase the height to make it thicker */
   border-radius: 20px;
 }
