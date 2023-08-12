@@ -3,11 +3,6 @@ div, .logoText {
     color:#E5E5E5;
   }
 
-.logoText {
-    font-size: 1.8rem;
-    margin-right: 0.5rem;
-}
-
 .logoText, .gradient-text {
     background: #BA86FC;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #00ffd5, #BA86FC);  /* Chrome 10-25, Safari 5.1-6 */
@@ -16,7 +11,7 @@ div, .logoText {
     -webkit-text-fill-color: transparent;
 }  
 
-.boxStyle, .canvasMain  {
+.canvasMain  {
     box-shadow: 2px 2px 4px 0px #E5E5E5
   }
 
@@ -39,23 +34,11 @@ div, .logoText {
     padding: 0.5rem;
 }
   
-.bSize1, .togglerSize {
-  width: 3rem;
-  height: 3rem;
-}
-  
-.bSize1 {
+/* .bSize1 {
   margin: 0.5rem 1rem 1rem 1rem;
-}
-  
-.bSize2 {
-  width: 1.8rem;
-  height: 1.8rem;
-  padding-bottom: 0.2rem;
-  margin-bottom: 0.5rem;
-}
+} */
 
-.button {
+.button, .boxStyle {
     border: none;
     outline: none;
     color: #00DAC6;
@@ -72,7 +55,7 @@ div, .logoText {
     touch-action: manipulation;
   }
   
-  .bSize1:before {
+  .bSize1:before, .boxStyle:before {
     content: "";
     background: linear-gradient(
       45deg,
@@ -90,14 +73,14 @@ div, .logoText {
     z-index: -1;
     filter: blur(4px);
     -webkit-filter: blur(4px);
-    width: calc(100% + 1px);
-    height: calc(100% + 1px);
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
     animation: glowing-button-85 20s linear infinite;
     transition: opacity 0.3s ease-in-out;
     border-radius: 5px;
   }
   
-  .bSize1:after {
+  .bSize1:after, .boxStyle:after {
     z-index: -1;
     content: "";
     position: absolute;

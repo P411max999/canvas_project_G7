@@ -8,6 +8,7 @@ let contextReal = canvasReal.getContext("2d");
 let canvasDraft = document.getElementById("canvas-draft");
 let contextDraft = canvasDraft.getContext("2d");
 let currentFunction;
+let previousFunction;
 let dragging = false;
 
 $("#canvas-draft").mousedown(function (e) {

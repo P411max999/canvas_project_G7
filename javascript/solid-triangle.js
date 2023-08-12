@@ -1,53 +1,54 @@
-/**********************************************
- * Drawing Solid Circle Functionality
- * ==================================
- * This class extends the PaintFunction class, which you can find in canvas-common
- ***********************************************/
-// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
-
-class SolidCircle extends PaintFunction {
+class SolidTriangle extends PaintFunction {
   constructor(contextReal, contextDraft) {
     super();
     this.contextReal = contextReal;
     this.contextDraft = contextDraft;
+    this.coordinates = []; // use array to store the coordinates
     this.selectcolor = document.getElementById("favcolorBorder").value;
   }
 
   onMouseDown(coord, event) {
     this.contextReal.fillStyle = `${this.selectcolor}`;
-    this.origX = coord[0];
-    this.origY = coord[1];
+    this.coordinates.unshift(coord); // sotre the first coordinate，用push每次只能取最原始一個click坐標數，unshift可以更新下一個點擊坐標數
+    this.selectcolor = document.getElementById("favcolorBorder").value;
   }
 
   onDragging(coord, event) {
-    // Circle drawing
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    // Manipulating the context draft
-    this.contextDraft.fillStyleStyle = `${this.selectcolor}`;
-    // Calculate the radius based on the distance between the original coordinates and the current coordinates
-    const radius = Math.sqrt(
-      (coord[0] - this.origX) ** 2 + (coord[1] - this.origY) ** 2
-    );
-    // Draw the circle from below
+    this.contextDraft.fillStyle = `${this.selectcolor}`;
+    const startPoint = this.coordinates[0];
+    const endPoint = coord;
+    // //  計算中點的坐標[(x1+x2)/2,(y1+y2)/2]
+    // const midPoint = [
+    //   (startPoint[0] + endPoint[0]) / 2,
+    //   (startPoint[1] + endPoint[1]) / 2,
+    // ];
+    const thirdPoint = [startPoint[0], endPoint[1]];
+
     this.contextDraft.beginPath();
-    this.contextDraft.arc(this.origX, this.origY, radius, 0, 2 * Math.PI);
-    // this.contextDraft.closePath();
+    this.contextDraft.moveTo(startPoint[0], startPoint[1]);
+    this.contextDraft.lineTo(endPoint[0], endPoint[1]);
+    this.contextDraft.lineTo(startPoint[0], endPoint[1]);
+    this.contextDraft.closePath();
     this.contextDraft.fill();
   }
-
   onMouseMove() {}
 
-  // Committing the element to the canvas
   onMouseUp(coord) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.contextReal.fillStyle = `${this.selectcolor}`;
-    const radius = Math.sqrt(
-      (coord[0] - this.origX) ** 2 + (coord[1] - this.origY) ** 2
-    );
+    const startPoint = this.coordinates[0];
+    const endPoint = coord;
+    // const midPoint = [
+    //   (startPoint[0] + endPoint[0]) / 2,
+    //   (startPoint[1] + endPoint[1]) / 2,
+    // ];
+    const thirdPoint = [startPoint[0], endPoint[1]];
     this.contextReal.beginPath();
-    this.contextReal.arc(this.origX, this.origY, radius, 0, 2 * Math.PI);
-
-    // this.contextReal.closePath();
+    this.contextReal.moveTo(startPoint[0], startPoint[1]);
+    this.contextReal.lineTo(endPoint[0], endPoint[1]);
+    this.contextReal.lineTo(startPoint[0], endPoint[1]);
+    this.contextReal.closePath();
     this.contextReal.fill();
   }
 

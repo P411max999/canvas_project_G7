@@ -49,7 +49,11 @@
         ></canvas>
       </div>
       <div class="vh100">
-        <nav class="navbar navbar-expand-md boxStyle" data-bs-theme="dark">
+        <nav
+          id="style-nav"
+          class="navbar navbar-expand-md boxStyle bg-body-tertiary"
+          data-bs-theme="grey"
+        >
           <div class="container-fluid">
             <button
               class="navbar-toggler ms-3 mt-3 mb-4 boxStyle togglerSize"
@@ -452,6 +456,12 @@
         } else {
           stylesheet.setAttribute("href", "./css/style-neon.css");
         }
+        var navStyle = document.getElementById("style-nav");
+        if (navStyle.getAttribute("data-bs-theme") === "grey") {
+          navStyle.setAttribute("data-bs-theme", "dark");
+        } else {
+          navStyle.setAttribute("data-bs-theme", "grey");
+        }
       }
     </script>
     <!-- Basic -->
@@ -495,6 +505,7 @@
         $("#hollow-triangle").click(() => {
           currentFunction = new HollowTriangle(contextReal, contextDraft);
         });
+        // TBC
         $("#favcolorBorder").mouseout(() => {
           currentFunction = new DrawingLine(contextReal);
         });

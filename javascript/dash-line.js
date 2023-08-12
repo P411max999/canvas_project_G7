@@ -43,6 +43,7 @@ class DashLine extends PaintFunction {
     this.contextReal.lineTo(endPoint[0], endPoint[1]);
     // this.contextReal.closePath();
     this.contextReal.stroke();
+    this.contextReal.setLineDash([]); // set up dash line
   }
 
   onMouseLeave() {}

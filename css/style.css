@@ -48,6 +48,11 @@ body {
   color: rgb(45, 35, 66);
 }
 
+.logoText {
+  font-size: 1.8rem;
+  margin-right: 0.5rem;
+}
+
 .logo {
   display: block;
   justify-content: center;
@@ -56,6 +61,22 @@ body {
 
 .navbar {
   height: 6rem;
+}
+
+.bSize1, .togglerSize {
+  width: 3rem;
+  height: 3rem;
+}
+
+.bSize1 {
+  margin: 0.5rem 1rem 1rem 1rem;
+}
+
+.bSize2 {
+  width: 1.8rem;
+  height: 1.8rem;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .i1 {

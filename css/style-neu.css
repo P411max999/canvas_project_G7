@@ -4,11 +4,10 @@ div, .logoText {
 }
 
 .logoText {
-  font-size: 1.8rem;
   font-weight: 800;
 }
 
-.logoText, .gradient-text {
+.logoText, .gradient-text, .des {
   background: #a8c0ff;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #3f2b96, #a8c0ff);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, #3f2b96, #a8c0ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -33,22 +32,6 @@ div, .logoText {
 .navbar {
   background-color: #FCFCFD;
   border-radius: 0px 0px 20px 0px;
-}
-
-.bSize1, .togglerSize {
-  width: 3rem;
-  height: 3rem;
-}
-
-.bSize1 {
-  margin: 0.5rem 0.5rem 1rem 1rem;
-}
-
-.bSize2 {
-  width: 1.8rem;
-  height: 1.8rem;
-  padding-bottom: 0.2rem;
-  margin-bottom: 0.5rem;
 }
 
 .button {
