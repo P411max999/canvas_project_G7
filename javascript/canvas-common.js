@@ -7,12 +7,21 @@ let canvasReal = document.getElementById("canvas-real");
 let contextReal = canvasReal.getContext("2d");
 let canvasDraft = document.getElementById("canvas-draft");
 let contextDraft = canvasDraft.getContext("2d");
+let selectcolor = document.getElementById("favcolorBorder");
+selectcolor.addEventListener("click", () => {
+  console.log(selectcolor.value);
+});
+let lineWidth = document.getElementById("sizeSlider");
+lineWidth.addEventListener("change", () => {
+  console.log(lineWidth.value);
+});
 let currentFunction;
 let dragging = false;
 
 $("#canvas-draft").mousedown(function (e) {
   let mouseX = e.offsetX;
   let mouseY = e.offsetY;
+  console.log(selectcolor.value);
   currentFunction.onMouseDown([mouseX, mouseY], e);
   dragging = true;
 });
@@ -20,6 +29,7 @@ $("#canvas-draft").mousedown(function (e) {
 $("#canvas-draft").mousemove(function (e) {
   let mouseX = e.offsetX;
   let mouseY = e.offsetY;
+  console.log(selectcolor);
   if (dragging) {
     currentFunction.onDragging([mouseX, mouseY], e);
   }

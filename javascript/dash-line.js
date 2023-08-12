@@ -31,7 +31,7 @@ class DashLine extends PaintFunction {
   onMouseMove() {}
 
   onMouseUp(coord) {
-    this.contextReal.lineWidth = 2;
+    this.contextReal.lineWidth = lineWidth.value;
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.contextReal.strokeStyle = `${this.selectcolor}`;
     const startPoint = this.coordinates[0];

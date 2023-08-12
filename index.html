@@ -335,14 +335,7 @@
                 <div class="part">
                   <div class="center des">STROKE</div>
                   <div class="slider-container">
-                    <input
-                      type="range"
-                      id="sizeSlider"
-                      min="0"
-                      max="100"
-                      value="50"
-                      step="1"
-                    />
+                    <input type="range" id="sizeSlider" min="1" max="9" />
                   </div>
                 </div>
               </div>
@@ -495,9 +488,9 @@
         $("#hollow-triangle").click(() => {
           currentFunction = new HollowTriangle(contextReal, contextDraft);
         });
-        $("#favcolorBorder").mouseout(() => {
-          currentFunction = new DrawingLine(contextReal);
-        });
+        // $("#favcolorBorder").mouseout(() => {
+        //   currentFunction = new DrawingLine(contextReal);
+        // });
         $("#clear").click(() => {
           currentFunction = new Clear(
             contextReal,
