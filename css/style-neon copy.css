@@ -1,0 +1,83 @@
+.navbar {
+  background-color: #212121;
+  border-radius: 0px 0px 50px 50px;
+}
+  
+.bSize1, .togglerSize {
+  width: 3rem;
+  height: 3rem;
+}
+  
+.bSize1 {
+  margin: 0.5rem 2rem 1rem 1rem;
+}
+  
+.bSize2 {
+  width: 1.8rem;
+  height: 1.8rem;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.button {
+  border: none;
+  outline: none;
+  color: #a9a9a9;
+  background: #a9a9a9;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff00c8,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}

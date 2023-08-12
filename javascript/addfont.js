@@ -25,7 +25,6 @@ class AddFont extends PaintFunction {
   
         const offsetX = inputLeft - canvasLeft; //計算位置
         const offsetY = inputTop - canvasTop; //計算位置
-        this.context.fillStyle = `${this.selectcolor}`;
         this.context.fillText(this.text, offsetX, offsetY);
   
         document.body.removeChild(this.inputElement);

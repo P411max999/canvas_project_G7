@@ -67,13 +67,13 @@
             >
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="logo">
+            <div class="logo ms-4">
               <div>
-                <a class="navbar-brand ps-4" href="index.html"
+                <a class="navbar-brand" href="index.html"
                   ><span class="logoText">DO-DOODLE</span></a
                 >
               </div>
-              <div center>
+              <div class="center">
                 <label class="toggle">
                   <input
                     type="checkbox"
@@ -470,44 +470,56 @@
       $(() => {
         currentFunction = new DrawingLine(contextReal);
         $("#add-font").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new AddFont(contextReal);
         });
         $("#drawing-line").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new DrawingLine(contextReal);
         });
         $("#eraser-line").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new Eraser(contextReal);
         });
         $("#solid-line").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new SolidLine(contextReal, contextDraft);
         });
         $("#dash-line").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new DashLine(contextReal, contextDraft);
         });
         $("#draw-curve").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new DrawCurve(contextReal, contextDraft);
         });
         $("#drawing-rectangle").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new DrawingRectangle(contextReal, contextDraft);
         });
         $("#hollow-rectangle").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new HollowRectangle(contextReal, contextDraft);
         });
         $("#solid-circle").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new SolidCircle(contextReal, contextDraft);
         });
         $("#hollow-circle").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new HollowCircle(contextReal, contextDraft);
         });
         $("#solid-triangle").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new SolidTriangle(contextReal, contextDraft);
         });
         $("#hollow-triangle").click(() => {
+          previousFunction = currentFunction;
           currentFunction = new HollowTriangle(contextReal, contextDraft);
         });
         // TBC
         $("#favcolorBorder").mouseout(() => {
-          currentFunction = new DrawingLine(contextReal);
+          currentFunction = new previousFunction();
         });
         $("#clear").click(() => {
           currentFunction = new Clear(
