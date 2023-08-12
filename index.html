@@ -6,9 +6,9 @@
     <title>DO-DOODLE</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./css/closeWindow.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link id="style" rel="stylesheet" href="./css/style-neu.css" />
+    <link rel="stylesheet" href="./css/closeWindow.css" />
     <!-- cdn -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -442,17 +442,7 @@
     <!-- Setting -->
     <script src="./javascript/clear.js"></script>
     <script src="./javascript/addremove.js"></script>
-    <!-- Change Style -->
-    <script>
-      function toggleStylesheet() {
-        var stylesheet = document.getElementById("style");
-        if (stylesheet.getAttribute("href") === "./css/style-neon.css") {
-          stylesheet.setAttribute("href", "./css/style-neu.css");
-        } else {
-          stylesheet.setAttribute("href", "./css/style-neon.css");
-        }
-      }
-    </script>
+    <script src="./javascript/changeStyle.js"></script>
     <!-- Basic -->
     <script src="javascript/on-click.js"></script>
     <script type="text/javascript">
@@ -506,7 +496,6 @@
           previousFunction = currentFunction;
           currentFunction = new HollowTriangle(contextReal, contextDraft);
         });
-        // TBC
         $("#favcolorBorder").mouseout(() => {
           currentFunction = new previousFunction();
         });
