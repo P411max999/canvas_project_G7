@@ -48,6 +48,12 @@ body {
   color: rgb(45, 35, 66);
 }
 
+.logo {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar {
   height: 6rem;
 }
@@ -57,7 +63,7 @@ body {
 }
 
 .i2 {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .toggleBox {
@@ -123,7 +129,7 @@ input[type="checkbox"]:checked + .slider:before {
 }
 
 .canvasMain {
-  border-radius: 0px 0px 10px 0px;
+  border-radius: 0px 0px 30px 0px;
 }
 
 .attr {

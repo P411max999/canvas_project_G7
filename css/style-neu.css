@@ -5,26 +5,29 @@ div, .logoText {
 
 .logoText {
   font-size: 1.8rem;
-  font-weight: 900;
+  font-weight: 800;
+}
+
+.logoText, .gradient-text {
+  background: #a8c0ff;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #3f2b96, #a8c0ff);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, #3f2b96, #a8c0ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.boxStyle, .canvasMain, .close, #sizeSlider::-webkit-slider-runnable-track {
+.boxStyle, .canvasMain, .close, #sizeSlider::-webkit-slider-runnable-track, #favcolorBorder {
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
 }
 
 .boxStyle {
-  background: -webkit-linear-gradient(80deg, #ffffff, #ffffff, #ffffff, #D6D6E7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(170deg, #ffffff, #ffffff, #ffffff, #D6D6E7);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(170deg, #ffffff, #ffffff, #ffffff, #D6D6E7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #favcolorBorder {
   border-radius: 5px;
   padding: 0.5rem;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
 }
 
 .navbar {
@@ -42,8 +45,8 @@ div, .logoText {
 }
 
 .bSize2 {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.8rem;
+  height: 1.8rem;
   padding-bottom: 0.2rem;
   margin-bottom: 0.5rem;
 }
@@ -78,22 +81,9 @@ div, .logoText {
   transform: translateY(-2px);
 }
 
-.onClick:active {
+.onClick:active, .button.active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
-}
-
-.button.active {
-  box-shadow: #D6D6E7 0 3px 7px inset;
-  transform: translateY(2px);
-}
-
-.gradient-text {
-  background: #a8c0ff;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #3f2b96, #a8c0ff);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #3f2b96, #a8c0ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .canvasMain {
