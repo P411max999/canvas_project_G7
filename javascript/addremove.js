@@ -41,4 +41,4 @@ hideToolsButton.addEventListener("click", () => {
 });
 AddSettings.addEventListener("click", () => {
   toolsBox.classList.remove("hidden");
-});
+})
