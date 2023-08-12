@@ -29,7 +29,7 @@ $("#canvas-draft").mousedown(function (e) {
 $("#canvas-draft").mousemove(function (e) {
   let mouseX = e.offsetX;
   let mouseY = e.offsetY;
-  console.log(selectcolor);
+  console.log(selectcolor.value);
   if (dragging) {
     currentFunction.onDragging([mouseX, mouseY], e);
   }
