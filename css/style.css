@@ -44,31 +44,13 @@ body {
 }
 
 .logoText {
-  color: rgb(45, 35, 66);
+  font-size: 1.8rem;
 }
 
 .logo {
-  display: block;
+  display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.navbar {
-  height: 6rem;
-}
-
-.i1 {
-  font-size: 1.4rem;
-}
-
-.i2 {
-  font-size: 0.9rem;
-}
-
-.toggleBox {
-  width: 4rem;
-  height: 2rem;
-  margin: 5px 0px;
 }
 
 .toggle {
@@ -91,29 +73,51 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
+  transition: .4s;
   border-radius: 20px;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  width: 28.5px;
-  height: 28.5px;
-  left: 1px;
-  bottom: 1px;
-  background-color: white;
-  transition: 0.4s;
+  width: 25px;
+  height:  25px;
+  left: 3px;
+  bottom: 4px;
+  transition: .4s;
   border-radius: 50%;
-}
-
-input[type="checkbox"]:checked + .slider {
-  background-color: #ccc;
 }
 
 input[type="checkbox"]:checked + .slider:before {
   transform: translateX(30px);
+}
+
+.navbar {
+  height: 6rem;
+}
+
+.bSize1, .togglerSize {
+  width: 3rem;
+  height: 3rem;
+}
+
+.bSize1 {
+  margin: 0.5rem 1rem 1rem 1rem;
+}
+
+.bSize2 {
+  width: 1.8rem;
+  height: 1.8rem;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.i1 {
+  font-size: 1.4rem;
+}
+
+.i2 {
+  font-size: 0.9rem;
 }
 
 /* .main {
@@ -182,7 +186,7 @@ input[type="checkbox"]:checked + .slider:before {
   display: block;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0.5rem;
+  margin-top: .5rem;
   margin-bottom: 1rem;
 }
 
@@ -203,17 +207,17 @@ input[type="checkbox"]:checked + .slider:before {
   height: 60px;
   width: 60px;
   border: 0px solid;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0,0,0,0);
   padding: 0.25rem;
 }
 
 #favcolorFill {
-  content: "";
+  content: '';
   position: absolute;
   height: 35px;
   width: 35px;
   border: 0px solid;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0,0,0,0);
 }
 
 .slider-container {
@@ -235,7 +239,4 @@ input[type="checkbox"]:checked + .slider:before {
   background-color: white; /* Change the color of the track */
   width: 16px; /* Increase the height to make it thicker */
   border-radius: 20px;
-}
-.hidden {
-  display: none;
 }
