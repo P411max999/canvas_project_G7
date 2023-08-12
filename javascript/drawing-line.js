@@ -11,7 +11,7 @@ class DrawingLine extends PaintFunction {
   constructor(contextReal) {
     super();
     this.context = contextReal;
-    this.selectcolor = document.getElementById("favcolorBorder").value;
+    // this.selectcolor = document.getElementById("favcolorBorder").value;
     console.log(this.selectcolor);
   }
 
@@ -19,12 +19,12 @@ class DrawingLine extends PaintFunction {
   onMouseDown(coord, event) {
     // Fill in the color by left or right click
     if (event.button === 0) {
-      console.log(this.selectcolor);
-      this.context.strokeStyle = `${this.selectcolor}`;
-      this.context.lineWidth = 2;
+      console.log(selectcolor.value);
+      this.context.strokeStyle = `${selectcolor.value}`;
+      this.context.lineWidth = lineWidth.value;
     } else if (event.button === 2) {
       this.context.strokeStyle = "#FFFFFF"; // right-click color
-      this.context.lineWidth = 10;
+      this.context.lineWidth = lineWidth.value;
     }
     // Kind of line
     this.context.lineJoin = "round";

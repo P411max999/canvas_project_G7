@@ -8,13 +8,13 @@ class HollowTriangle extends PaintFunction {
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = `${this.selectcolor}`;
+    this.contextReal.fillStyle = `${selectcolor.value}`;
     this.coordinates.unshift(coord); // sotre the first coordinate，用push每次只能取最原始一個click坐標數，unshift可以更新下一個點擊坐標數
   }
 
   onDragging(coord, event) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextDraft.strokeStyle = `${this.selectcolor}`;
+    this.contextDraft.strokeStyle = `${selectcolor.value}`;
     const startPoint = this.coordinates[0];
     const endPoint = coord;
     // //  計算中點的坐標[(x1+x2)/2,(y1+y2)/2]
@@ -34,9 +34,9 @@ class HollowTriangle extends PaintFunction {
   onMouseMove() {}
 
   onMouseUp(coord) {
-    this.contextReal.lineWidth = 2;
+    this.contextReal.lineWidth = lineWidth.value;
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextReal.strokeStyle = `${this.selectcolor}`;
+    this.contextReal.strokeStyle = `${selectcolor.value}`;
     const startPoint = this.coordinates[0];
     const endPoint = coord;
     // const midPoint = [

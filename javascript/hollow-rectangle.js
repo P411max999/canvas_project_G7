@@ -14,7 +14,7 @@ class HollowRectangle extends PaintFunction {
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = `${this.selectcolor}`;
+    this.contextReal.fillStyle = `${selectcolor.value}`;
     this.origX = coord[0];
     this.origY = coord[1];
   }
@@ -23,7 +23,7 @@ class HollowRectangle extends PaintFunction {
     // Allows you to actually draw out your squares
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     // Manipulating the context draft
-    this.contextDraft.strokeStyle = `${this.selectcolor}`;
+    this.contextDraft.strokeStyle = `${selectcolor.value}`;
     // Pass in the original x and y coordinates, followed by the new coordinates that we get for position x and y
     this.contextDraft.strokeRect(
       this.origX,
@@ -37,12 +37,12 @@ class HollowRectangle extends PaintFunction {
 
   // Committing the element to the canvas
   onMouseUp(coord) {
-    this.contextReal.lineWidth = 2;
+    this.contextReal.lineWidth = lineWidth.value;
     // Clearing the rectangle first
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     // Commit that drawing to context real
     // Without this commit, it won't actually draw
-    this.contextReal.strokeStyle = `${this.selectcolor}`;
+    this.contextReal.strokeStyle = `${selectcolor.value}`;
     this.contextReal.strokeRect(
       this.origX,
       this.origY,

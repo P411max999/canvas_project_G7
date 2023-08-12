@@ -10,11 +10,11 @@ class HollowCircle extends PaintFunction {
     super();
     this.contextReal = contextReal;
     this.contextDraft = contextDraft;
-    this.selectcolor = document.getElementById("favcolorBorder").value;
+    // this.selectcolor = document.getElementById("favcolorBorder").value;
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = `${this.selectcolor}`;
+    this.contextReal.fillStyle = `${selectcolor.value}`;
     this.origX = coord[0];
     this.origY = coord[1];
   }
@@ -30,7 +30,7 @@ class HollowCircle extends PaintFunction {
     );
     // Draw the circle from below
     this.contextDraft.arc(this.origX, this.origY, radius, 0, 2 * Math.PI);
-    this.contextDraft.strokeStyle = `${this.selectcolor}`;
+    this.contextDraft.strokeStyle = `${selectcolor.value}`;
     this.contextDraft.stroke();
   }
 
@@ -38,14 +38,14 @@ class HollowCircle extends PaintFunction {
 
   // Committing the element to the canvas
   onMouseUp(coord) {
-    this.contextReal.lineWidth = 2;
+    this.contextReal.lineWidth = lineWidth.value;
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.contextReal.beginPath();
     const radius = Math.sqrt(
       Math.pow(coord[0] - this.origX, 2) + Math.pow(coord[1] - this.origY, 2)
     );
     this.contextReal.arc(this.origX, this.origY, radius, 0, 2 * Math.PI);
-    this.contextReal.strokeStyle = `${this.selectcolor}`;
+    this.contextReal.strokeStyle = `${selectcolor.value}`;
     this.contextReal.stroke();
   }
 
